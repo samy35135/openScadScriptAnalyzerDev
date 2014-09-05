@@ -60,10 +60,88 @@ To download things from thingiverse.com you need to have a access token from the
 
 ## Screen shots
 
-![example image](main.png "An exemplary image")
+![example image](doc/main.png "An exemplary image")
 
-![example image](main2.png "An exemplary image")
+![example image](doc/main2.png "An exemplary image")
 
-![example image](main3.png "An exemplary image")
+![example image](doc/main3.png "An exemplary image")
+
+## Project structure 
+
+
+    openScadAnalyzer
+     --client             : client side - AngularJS
+       --app
+         --main           : main page (statistics)
+         --thingiverse    : main fonctions (batch jobs)
+       --components
+         --navbar         : menu
+         --socket         : socket.io client side conf
+     --server             : server side - Node.JS
+       --api
+         --thing          : main fonctions of server side
+           --model        : database models (mongoose(http://mongoosejs.com/) tech)
+           --openscadLib  : openscad libraries
+       --config           : server configurations
+         --environment    
+           --development.js : dev mode conf
+           --production.js  : production mode conf
+         --express.js     : express server conf
+         --socketio.js    : socket.io server side conf
+       --app.js           : main page ← entry point
+       --routes.js        : page routing conf 
+      --bower.json        : client side dependencies ( used by AngularJS)
+      --package.json      : server side dependencies ( used by Node.js)
+
+
+## Client structure
+
+    --app                      : application codes
+      --main
+        --main.controller.js   : controller
+        --main.html            :
+        --main.js              : uiRouting config of main module
+      --thingiverse           
+        --batch.html           : download things here
+        --parse.html           : parse things here
+        --thingiverse.batch.controller.js   : controller of batch.html
+        --thingiverse.controller.js         : controller of main.html
+        --thingiverse.foceParsing.controller.js : controller of parse.html
+        --thingiverse.html     : thing list
+        --tingiverse.js        : routing conf of thingiverse module
+        --tingiverse.service.js : service class of thingiverse.controller.js
+      --app.js                  : angular module configulation
+    --assets                    : public resources - images...
+    --components                : common components here
+      --navbar                  
+        --navbar.controller.js  : 
+        --navbar.html
+      --socket
+        --socket.service.js     : client socket conf
+
+## Server side structure
+
+    --api
+      --thing
+        --model
+          --Category.model.js
+          --Comment.model.js
+          --File.model.js
+          --Pagination.js
+          --Tag.model.js
+          --Thing.model.js
+        --Commandline.js         : Helper class for node execution in the Cli env
+        --DataBag.js             : Helper class for thingiverse.service.js
+        --index.js               : rounting conf
+        --openSadAnalyzer.js     : Helper class for parsing - it calls openscad-openjscad-translator module.
+        --parsingHelper.js
+        --requestHelper.js
+        --socketMsgHelper.js
+        --thingiverse.controller.js
+        --thingiverse.dao.js
+        --thingiverse.service.js
+        --thigiveseUtils.js
+
+
 
 
