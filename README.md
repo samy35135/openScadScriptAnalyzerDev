@@ -54,6 +54,9 @@ This project is based on the ['angaular-fullstack'](https://github.com/DaftMonk/
   * openScadScriptAnalyzer/server/config/environment/development.js
   * openScadScriptAnalyzer/server/config/environment/production.js
 
+## Access Token
+
+To download things from thingiverse.com you need to have a access token from the [developer site](http://www.thingiverse.com/developers/getting-started)
 
 ## Screen shots
 
