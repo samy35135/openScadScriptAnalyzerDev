@@ -1,0 +1,60 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div class="inner cover" >
+
+
+<form class="form-inline" role="form">
+	<label class="radio-inline">
+		<input type="radio" value="parseAllFailedFiles" checked ng-model="targetType"> Failed 
+	</label>
+	<label class="radio-inline">
+		<input type="radio" value="parseNotParsedFiles" ng-model="targetType"> Not parsed
+	</label>
+	 | Limit : <select class="form-control input-sm" ng-model="limit">
+	  <option>10</option>
+	  <option selected>50</option>
+	  <option>100</option>
+	</select> 
+	 File size (less then): <select class="form-control input-sm" ng-model="filesize">
+	  <option>10000</option>
+	  <option>20000</option>
+	  <option>30000</option>
+	</select> 
+  	<button type="button" class="btn btn-default  btn-sm" ng-click="parseThem()" >Parse them</button>
+</form>
+
+	<div class="col-md-6 col-md-offset-3">
+	<br>
+	<small class='GhostWhite'>total target cnt : {{batchStatus.value}} / {{batchStatus.max}} </small>
+	<progressbar class="progress-striped active" 
+	             max="batchStatus.max" 
+	             value="batchStatus.value" 
+	             type="danger"
+	             ng-if="batchStatus.max > 0" >
+		<i><p class="GhostWhite">{{batchStatus.value}} / {{batchStatus.max}}</p></i>
+	</progressbar>
+
+		<table class="table">
+			<thead>
+				<tr>
+				<th>No</th>
+				<th>Thing id</th>
+				<th>File id</th>
+				<th>File name</th>
+				<th>File size</th>
+				<th>Parsing msg</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="(index, thing) in awesomeThings track by index">
+				<td>{{index+1}}</td>
+				<td>{{thing.thing_id}}</td>
+				<td>{{thing.file_id}}</td>
+				<td>{{thing.file_name}}</td>
+				<td>{{thing.file_size}}</td>
+				<td>{{thing.parsingMsg}}</td>
+				</tr>
+			</tbody>
+		</table>
+	
+	</div>
+</div>

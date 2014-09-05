@@ -1,0 +1,373 @@
+
+/**
+ * Bootstrap Fonts
+ */
+
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.eot');
+    src: url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+    url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff') format('woff'),
+    url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+    url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+/**
+ *Font Awesome Fonts
+ */
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../bower_components/font-awesome/fonts/fontawesome-webfont.eot?v=4.1.0');
+    src: url('../bower_components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'),
+    url('../bower_components/font-awesome/fonts/fontawesome-webfont.woff?v=4.1.0') format('woff'),
+    url('../bower_components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.1.0') format('truetype'),
+    url('../bower_components/font-awesome/fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/**
+ * App-wide Styles
+ */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+.comment {
+   color:#008080;
+}
+
+small {
+   color:#008080;
+}
+
+comment {
+   color:#008080;
+   font-size:11px;
+}
+
+important {
+    color : #CD5C5C;
+    font-size:11px;
+}
+
+cube {
+  border-radius: 2px;
+  margin : 15px;
+  padding : 15px;
+  border: solid gray 1px;
+  width:50px; 
+  text-align:center;
+}
+
+circle {
+  border-radius: 15px;
+  margin : 0px;
+  padding : 15px;
+  border: solid gray 1px;
+  width:30px;
+}
+
+._circle{width:20px;height:20px;border-radius:10px;margin: 5px}
+.circle{width:10px;height:10px;border-radius:5px; margin: 5px}
+._empty{border: solid gray 1px;}
+
+div.box {
+  border-radius: 5px;
+  padding : 10px;
+  border: dotted gray 1px;
+}
+
+mark {
+  border-radius: 3px;
+  padding : 1px 3px;
+  background-color:#E0FFFF;
+}
+
+.AliceBlue{ color:#F0F8FF; }
+.AntiqueWhite{ color:#FAEBD7; }
+.Aqua{ color:#00FFFF; }
+.Aquamarine{ color:#7FFFD4; }
+.Azure{ color:#F0FFFF; }
+.Beige{ color:#F5F5DC; }
+.Bisque{ color:#FFE4C4; }
+.Black{ color:#000000; }
+.BlanchedAlmond{ color:#FFEBCD; }
+.Blue{ color:#0000FF; }
+.BlueViolet{ color:#8A2BE2; }
+.Brown{ color:#A52A2A; }
+.BurlyWood{ color:#DEB887; }
+.CadetBlue{ color:#5F9EA0; }
+.Chartreuse{ color:#7FFF00; }
+.Chocolate{ color:#D2691E; }
+.Coral{ color:#FF7F50; }
+.CornflowerBlue{ color:#6495ED; }
+.Cornsilk{ color:#FFF8DC; }
+.Crimson{ color:#DC143C; }
+.Cyan{ color:#00FFFF; }
+.DarkBlue{ color:#00008B; }
+.DarkCyan{ color:#008B8B; }
+.DarkGoldenRod{ color:#B8860B; }
+.DarkGray{ color:#A9A9A9; }
+.DarkGreen{ color:#006400; }
+.DarkKhaki{ color:#BDB76B; }
+.DarkMagenta{ color:#8B008B; }
+.DarkOliveGreen{ color:#556B2F; }
+.DarkOrange{ color:#FF8C00; }
+.DarkOrchid{ color:#9932CC; }
+.DarkRed{ color:#8B0000; }
+.DarkSalmon{ color:#E9967A; }
+.DarkSeaGreen{ color:#8FBC8F; }
+.DarkSlateBlue{ color:#483D8B; }
+.DarkSlateGray{ color:#2F4F4F; }
+.DarkTurquoise{ color:#00CED1; }
+.DarkViolet{ color:#9400D3; }
+.DeepPink{ color:#FF1493; }
+.DeepSkyBlue{ color:#00BFFF; }
+.DimGray{ color:#696969; }
+.DodgerBlue{ color:#1E90FF; }
+.FireBrick{ color:#B22222; }
+.FloralWhite{ color:#FFFAF0; }
+.ForestGreen{ color:#228B22; }
+.Fuchsia{ color:#FF00FF; }
+.Gainsboro{ color:#DCDCDC; }
+.GhostWhite{ color:#F8F8FF; }
+.Gold{ color:#FFD700; }
+.GoldenRod{ color:#DAA520; }
+.Gray{ color:#808080; }
+.Green{ color:#008000; }
+.GreenYellow{ color:#ADFF2F; }
+.HoneyDew{ color:#F0FFF0; }
+.HotPink{ color:#FF69B4; }
+.IndianRed { color:#CD5C5C; }
+.Indigo { color:#4B0082; }
+.Ivory{ color:#FFFFF0; }
+.Khaki{ color:#F0E68C; }
+.Lavender{ color:#E6E6FA; }
+.LavenderBlush{ color:#FFF0F5; }
+.LawnGreen{ color:#7CFC00; }
+.LemonChiffon{ color:#FFFACD; }
+.LightBlue{ color:#ADD8E6; }
+.LightCoral{ color:#F08080; }
+.LightCyan{ color:#E0FFFF; }
+.LightGoldenRodYellow{ color:#FAFAD2; }
+.LightGray{ color:#D3D3D3; }
+.LightGreen{ color:#90EE90; }
+.LightPink{ color:#FFB6C1; }
+.LightSalmon{ color:#FFA07A; }
+.LightSeaGreen{ color:#20B2AA; }
+.LightSkyBlue{ color:#87CEFA; }
+.LightSlateGray{ color:#778899; }
+.LightSteelBlue{ color:#B0C4DE; }
+.LightYellow{ color:#FFFFE0; }
+.Lime{ color:#00FF00; }
+.LimeGreen{ color:#32CD32; }
+.Linen{ color:#FAF0E6; }
+.Magenta{ color:#FF00FF; }
+.Maroon{ color:#800000; }
+.MediumAquaMarine{ color:#66CDAA; }
+.MediumBlue{ color:#0000CD; }
+.MediumOrchid{ color:#BA55D3; }
+.MediumPurple{ color:#9370DB; }
+.MediumSeaGreen{ color:#3CB371; }
+.MediumSlateBlue{ color:#7B68EE; }
+.MediumSpringGreen{ color:#00FA9A; }
+.MediumTurquoise{ color:#48D1CC; }
+.MediumVioletRed{ color:#C71585; }
+.MidnightBlue{ color:#191970; }
+.MintCream{ color:#F5FFFA; }
+.MistyRose{ color:#FFE4E1; }
+.Moccasin{ color:#FFE4B5; }
+.NavajoWhite{ color:#FFDEAD; }
+.Navy{ color:#000080; }
+.OldLace{ color:#FDF5E6; }
+.Olive{ color:#808000; }
+.OliveDrab{ color:#6B8E23; }
+.Orange{ color:#FFA500; }
+.OrangeRed{ color:#FF4500; }
+.Orchid{ color:#DA70D6; }
+.PaleGoldenRod{ color:#EEE8AA; }
+.PaleGreen{ color:#98FB98; }
+.PaleTurquoise{ color:#AFEEEE; }
+.PaleVioletRed{ color:#DB7093; }
+.PapayaWhip{ color:#FFEFD5; }
+.PeachPuff{ color:#FFDAB9; }
+.Peru{ color:#CD853F; }
+.Pink{ color:#FFC0CB; }
+.Plum{ color:#DDA0DD; }
+.PowderBlue{ color:#B0E0E6; }
+.Purple{ color:#800080; }
+.Red{ color:#FF0000; }
+.RosyBrown{ color:#BC8F8F; }
+.RoyalBlue{ color:#4169E1; }
+.SaddleBrown{ color:#8B4513; }
+.Salmon{ color:#FA8072; }
+.SandyBrown{ color:#F4A460; }
+.SeaGreen{ color:#2E8B57; }
+.SeaShell{ color:#FFF5EE; }
+.Sienna{ color:#A0522D; }
+.Silver{ color:#C0C0C0; }
+.SkyBlue{ color:#87CEEB; }
+.SlateBlue{ color:#6A5ACD; }
+.SlateGray{ color:#708090; }
+.Snow{ color:#FFFAFA; }
+.SpringGreen{ color:#00FF7F; }
+.SteelBlue{ color:#4682B4; }
+.Tan{ color:#D2B48C; }
+.Teal{ color:#008080; }
+.Thistle{ color:#D8BFD8; }
+.Tomato{ color:#FF6347; }
+.Turquoise{ color:#40E0D0; }
+.Violet{ color:#EE82EE; }
+.Wheat{ color:#F5DEB3; }
+.White{ color:#FFFFFF; }
+.WhiteSmoke{ color:#F5F5F5; }
+.Yellow{ color:#FFFF00; }
+.YellowGreen{ color:#9ACD32; }
+
+._AliceBlue{ background-color:#F0F8FF; color:#A52A2A;}
+._AntiqueWhite{ background-color:#FAEBD7; }
+._Aqua{ background-color:#00FFFF; }
+._Aquamarine{ background-color:#7FFFD4; }
+._Azure{ background-color:#F0FFFF; }
+._Beige{ background-color:#F5F5DC; }
+._Bisque{ background-color:#FFE4C4; }
+._Black{ background-color:#000000; }
+._BlanchedAlmond{ background-color:#FFEBCD; }
+._Blue{ background-color:#0000FF; }
+._BlueViolet{ background-color:#8A2BE2; }
+._Brown{ background-color:#A52A2A; }
+._BurlyWood{ background-color:#DEB887; }
+._CadetBlue{ background-color:#5F9EA0; }
+._Chartreuse{ background-color:#7FFF00; }
+._Chocolate{ background-color:#D2691E; }
+._Coral{ background-color:#FF7F50; }
+._CornflowerBlue{ background-color:#6495ED; }
+._Cornsilk{ background-color:#FFF8DC; }
+._Crimson{ background-color:#DC143C; }
+._Cyan{ background-color:#00FFFF; }
+._DarkBlue{ background-color:#00008B; }
+._DarkCyan{ background-color:#008B8B; }
+._DarkGoldenRod{ background-color:#B8860B; }
+._DarkGray{ background-color:#A9A9A9; }
+._DarkGreen{ background-color:#006400; }
+._DarkKhaki{ background-color:#BDB76B; }
+._DarkMagenta{ background-color:#8B008B; }
+._DarkOliveGreen{ background-color:#556B2F; }
+._DarkOrange{ background-color:#FF8C00; }
+._DarkOrchid{ background-color:#9932CC; }
+._DarkRed{ background-color:#8B0000; }
+._DarkSalmon{ background-color:#E9967A; }
+._DarkSeaGreen{ background-color:#8FBC8F; }
+._DarkSlateBlue{ background-color:#483D8B; }
+._DarkSlateGray{ background-color:#2F4F4F; color:#F0FFFF;}
+._DarkTurquoise{ background-color:#00CED1; }
+._DarkViolet{ background-color:#9400D3; }
+._DeepPink{ background-color:#FF1493; }
+._DeepSkyBlue{ background-color:#00BFFF; }
+._DimGray{ background-color:#696969; }
+._DodgerBlue{ background-color:#1E90FF; }
+._FireBrick{ background-color:#B22222; }
+._FloralWhite{ background-color:#FFFAF0; }
+._ForestGreen{ background-color:#228B22; }
+._Fuchsia{ background-color:#FF00FF; }
+._Gainsboro{ background-color:#DCDCDC; }
+._GhostWhite{ background-color:#F8F8FF; }
+._Gold{ background-color:#FFD700; }
+._GoldenRod{ background-color:#DAA520; }
+._Gray{ background-color:#808080; }
+._Green{ background-color:#008000; }
+._GreenYellow{ background-color:#ADFF2F; }
+._HoneyDew{ background-color:#F0FFF0; }
+._HotPink{ background-color:#FF69B4; }
+._IndianRed { background-color:#CD5C5C; }
+._Indigo { background-color:#4B0082; }
+._Ivory{ background-color:#FFFFF0; color:#CD5C5C;}
+._Khaki{ background-color:#F0E68C; }
+._Lavender{ background-color:#E6E6FA; }
+._LavenderBlush{ background-color:#FFF0F5; }
+._LawnGreen{ background-color:#7CFC00; }
+._LemonChiffon{ background-color:#FFFACD; }
+._LightBlue{ background-color:#ADD8E6; }
+._LightCoral{ background-color:#F08080; }
+._LightCyan{ background-color:#E0FFFF; }
+._LightGoldenRodYellow{ background-color:#FAFAD2; }
+._LightGray{ background-color:#D3D3D3; }
+._LightGreen{ background-color:#90EE90; }
+._LightPink{ background-color:#FFB6C1; }
+._LightSalmon{ background-color:#FFA07A; }
+._LightSeaGreen{ background-color:#20B2AA; }
+._LightSkyBlue{ background-color:#87CEFA; }
+._LightSlateGray{ background-color:#778899; }
+._LightSteelBlue{ background-color:#B0C4DE; }
+._LightYellow{ background-color:#FFFFE0; }
+._Lime{ background-color:#00FF00; }
+._LimeGreen{ background-color:#32CD32; }
+._Linen{ background-color:#FAF0E6; }
+._Magenta{ background-color:#FF00FF; }
+._Maroon{ background-color:#800000; }
+._MediumAquaMarine{ background-color:#66CDAA; }
+._MediumBlue{ background-color:#0000CD; }
+._MediumOrchid{ background-color:#BA55D3; }
+._MediumPurple{ background-color:#9370DB; }
+._MediumSeaGreen{ background-color:#3CB371; }
+._MediumSlateBlue{ background-color:#7B68EE; }
+._MediumSpringGreen{ background-color:#00FA9A; }
+._MediumTurquoise{ background-color:#48D1CC; }
+._MediumVioletRed{ background-color:#C71585; }
+._MidnightBlue{ background-color:#191970; }
+._MintCream{ background-color:#F5FFFA; }
+._MistyRose{ background-color:#FFE4E1; }
+._Moccasin{ background-color:#FFE4B5; }
+._NavajoWhite{ background-color:#FFDEAD; }
+._Navy{ background-color:#000080; }
+._OldLace{ background-color:#FDF5E6; }
+._Olive{ background-color:#808000; }
+._OliveDrab{ background-color:#6B8E23; }
+._Orange{ background-color:#FFA500; }
+._OrangeRed{ background-color:#FF4500; }
+._Orchid{ background-color:#DA70D6; }
+._PaleGoldenRod{ background-color:#EEE8AA; }
+._PaleGreen{ background-color:#98FB98; color:#00008B;}
+._PaleTurquoise{ background-color:#AFEEEE; }
+._PaleVioletRed{ background-color:#DB7093; }
+._PapayaWhip{ background-color:#FFEFD5; }
+._PeachPuff{ background-color:#FFDAB9; }
+._Peru{ background-color:#CD853F; }
+._Pink{ background-color:#FFC0CB; }
+._Plum{ background-color:#DDA0DD; }
+._PowderBlue{ background-color:#B0E0E6; }
+._Purple{ background-color:#800080; }
+._Red{ background-color:#FF0000; }
+._RosyBrown{ background-color:#BC8F8F; }
+._RoyalBlue{ background-color:#4169E1; }
+._SaddleBrown{ background-color:#8B4513; }
+._Salmon{ background-color:#FA8072; }
+._SandyBrown{ background-color:#F4A460; }
+._SeaGreen{ background-color:#2E8B57; }
+._SeaShell{ background-color:#FFF5EE; }
+._Sienna{ background-color:#A0522D; }
+._Silver{ background-color:#C0C0C0; }
+._SkyBlue{ background-color:#87CEEB; }
+._SlateBlue{ background-color:#6A5ACD; }
+._SlateGray{ background-color:#708090; }
+._Snow{ background-color:#FFFAFA; }
+._SpringGreen{ background-color:#00FF7F; }
+._SteelBlue{ background-color:#4682B4; }
+._Tan{ background-color:#D2B48C; }
+._Teal{ background-color:#008080; }
+._Thistle{ background-color:#D8BFD8; }
+._Tomato{ background-color:#FF6347; }
+._Turquoise{ background-color:#40E0D0; }
+._Violet{ background-color:#EE82EE; }
+._Wheat{ background-color:#F5DEB3; }
+._White{ background-color:#FFFFFF; }
+._WhiteSmoke{ background-color:#F5F5F5; }
+._Yellow{ background-color:#FFFF00; }
+._YellowGreen{ background-color:#9ACD32; }

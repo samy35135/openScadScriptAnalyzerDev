@@ -1,0 +1,149 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<style type="text/css">
+	
+body {
+  color: #fff;
+  text-align: left;
+  text-shadow: none;
+}
+
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  background-color: #F8F8FF;
+  border: 1px solid #fff;
+}
+
+</style>
+<div class="col-md-12">
+<h3 class="PowderBlue">Things tagged with '{{tag}}' ({{totalCount}} Things)
+<form class="form-inline navbar-right" role="form">
+  <input type="text" ng-model="searchTxt" class="form-control input-sm" placeholder="search text" />
+</form>
+</h3>
+<!--  -->
+
+<table class="table table-condensed" >
+	<thead>
+	<tr >
+		<td width="10"></td>
+		<td width="50"></td>
+		<td width="500">Name</td>
+		<td>
+  <table >
+	<tr>
+	<td>Files   [</td>
+	<td><div class="circle _Aquamarine"></div></td><td>Success</td>
+	<td><div class="circle _MistyRose"></div></td><td>Failed</td>
+	<td><div class="circle _SlateGray"></div></td><td>Not Parsed</td>
+	<td><div class="circle _empty"></div></td><td>Not Scad file ]</td>
+	<tr>
+  </table>
+
+		</td>
+	</tr>
+	</thead>
+	<tbody>
+
+	<tr ng-repeat="(index, thing) in things | filter:searchTxt">
+		<td >{{getIndex(index)}}</td>
+		<td ><img src="{{thing.default_image.sizes[2].url}}" class="img-rounded" style="border: solid #FFA07A 2px;" /></td>
+		<td >
+			<h4>{{thing.name}}
+			<button class="btn btn-default btn-xs" 
+			        ng-click="viewInNewTab(thing.public_url)" 
+			        data-toggle="tooltip" 
+			        data-placement="left" 
+			        title="See this thing in the original site">
+			<span class="glyphicon glyphicon-eye-open"></span>
+			</button></h4>
+		</td>
+		<td >
+			<div ng-repeat="(key, scad) in thing.files | filter:{name:scad}" >
+			
+
+			<table>
+				<tr>
+					<td>
+					<div class="circle" 
+					     ng-class="{'_Aquamarine':scad.isParsed == 1, 
+					                '_SlateGray':notParsed(scad), 
+					                '_MistyRose':scad.isParsed === 0,
+					                '_MistyRose':scad.isParsed === 2, 
+					                '_empty':!isScadFile(scad.name)}"></div>
+					</td>
+					<td>
+						{{scad.name}}
+						<button ng-show="(scad.isParsed === 1)" 
+						        class="btn btn-default btn-xs" 
+						        ng-click="isCollapsed = !isCollapsed"
+						        data-toggle="tooltip" 
+					        	data-placement="left" 
+					        	title="Toggle Statistics & Content"><span class="glyphicon glyphicon-list"></span></button>
+
+						<button ng-show="(scad.isParsed === 0)" 
+						        class="btn btn-default btn-xs" 
+						        ng-click="isCollapsed2 = !isCollapsed2"
+						        data-toggle="tooltip" 
+					        	data-placement="left" 
+					        	title="Toggle Content"><span class="glyphicon glyphicon-list"></span></button>
+					</td>
+				</tr>
+			</table>
+			
+			<div collapse="isCollapsed2" ng-show="(scad.isParsed === 0)">
+				<pre class="_Snow"><code data-language="javascript">{{scad.content}}</code></pre>
+			</div>
+
+			<div collapse="isCollapsed" ng-show="(scad.isParsed === 1)">
+				<tabset justified="true" >
+				    <tab heading="Statistics">
+				    
+				    	<table class="table table-condensed" ng-show="(scad.isParsed === 1)" style="background-color:#333">
+							<tr class="">
+								<td rowspan="2" class="text-center " >context depth</td>
+								<td rowspan="2" class="text-center" >globalArgCnt</td>
+								<td colspan="2" class="text-center">Function</td>
+								<td colspan="2" class="text-center">Module</td>
+							</tr>
+							<tr >
+								<td>totalModuleCnt</td>
+								<td>mostComplexModuleArgCnt</td>
+								<td>totalFuncCnt</td>
+								<td>mostComplexFuncArgCnt</td>
+							</tr>
+							<tr ng-repeat="(key, s) in scad.stat" >
+							    <td>{{key + 1}}</td>
+								<td>{{s.globalArgCnt}}</td>
+								<td>{{s.totalModuleCnt}}</td>
+								<td>{{s.mostComplexModuleArgCnt}}</td>
+								<td>{{s.totalFuncCnt}}</td>
+								<td>{{s.mostComplexFuncArgCnt}}</td>
+							</tr>
+						</table>	
+				    
+				    </tab>
+				    <tab heading="Scad Content">
+				    	 <pre class="_DarkSlateGray White"><code data-language="javascript">{{scad.content}}</code></pre>
+				    </tab>
+				    <tab heading="Context">
+				    	 <pre class="_DarkSlateGray White"><code data-language="json">{{getContext(scad.context)}}</code></pre>
+				    </tab>
+			    </tabset>
+			</div><!-- toggle 1 -->
+			</div><!-- ng-repeat -->
+		</td>
+
+		
+
+	</tr>
+	</tbody>
+</table>
+
+<p class="text-center">
+<pagination total-items="totalCount" ng-model="currentPage" ng-change="pageChanged()" max-size="maxSize" items-per-page="20"></pagination>
+</p>
+
+</div>

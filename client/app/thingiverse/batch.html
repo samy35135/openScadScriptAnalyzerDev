@@ -1,0 +1,68 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="inner cover" ng-if="!checkedToken">
+<br><br><br><br><br><br><br><br>
+  <h1 class="cover-heading">Access Token is needed here :)</h1>
+  <p class="lead">To download things, we need your access token that you got from www.thingiverse.com</p>
+  <p class="lead">  
+  <form class="center-block form-inline" role="search" ng-if="!checkedToken">
+      <div class="form-group">
+        Access token : <input type="text" ng-model="access_token" name="rootName" class="form-control" placeholder="Access Token" >
+      </div>
+      <button type="button" class="btn btn-default" ng-click="checkMe(access_token)">Enter</button>
+  </form>  
+  </p>
+</div>
+
+
+<div class="inner cover" ng-if="checkedToken">
+  
+	<div class="col-md-12">
+	<form class="center-block form-inline" role="search">
+		tag <input type="text" ng-model="tag" placeholder="customizer" ng-init="tag" class="form-control"></input>
+	    / limite <input type="text" ng-model="limite" placeholder="50" ng-init="'50'" class="form-control"></input>
+		<button type="button" class="btn btn-default" ng-click="batch(tag, limite)" >batch</button>
+	</form>
+	</div>
+
+	<div class="col-md-12">
+	<br>
+	<small class='GhostWhite'>local data cnt : {{initStatus.value}} / remote data cnt : {{initStatus.max}} </small>
+	<progressbar class="progress-striped active" max="batchStatus.max" value="batchStatus.value" type="danger" ng-if="batchStatus.max > 0">
+		<i><p class="GhostWhite">{{batchStatus.value}} / {{batchStatus.max}}</p></i>
+	</progressbar>
+	
+		<div class="col-md-12">
+
+			<table class="table">
+			<thead>
+			<tr>
+			<th class="text-center">No</th>
+			<th class="text-center">id</th>
+			<th class="text-center">tags</th>
+			<th class="text-center">categories</th>
+			<th class="text-center">comments</th>
+			<th class="text-center">scad files</th>
+			<th class="text-center">scad download</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="(index, thing) in awesomeThings track by index">
+			<td>{{index+1}}</td>
+			<td>{{thing.thing_id}}</td>
+			<td>{{thing.tagCnt}}</td>
+			<td>{{ thing.categoryCnt}}</td>
+			<td>{{ thing.commentCnt}}</td>
+			<td>{{ thing.fileCnt}}</td>
+			<td>{{ thing.msg}}</td>
+			</tr>
+			</tbody>
+			</table>
+
+		</div>
+	
+	</div>
+
+</div>
+
+
