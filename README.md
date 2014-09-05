@@ -10,8 +10,8 @@ OpenScadScripAnalyzer is an app runtime based on node.js. You can download thing
 
 Run in command
 
-    $ sudo docker run --name db  -d mongodb_base:0.1
-    $ sudo docker run --name web -d -p 9000:9000 --link db:db openscadscript-analyzer:0.1
+    $ sudo docker run --name db  -d jiyoungparkkim/mongodb_base:0.1
+    $ sudo docker run --name web -d -p 9000:9000 --link db:db jiyoungparkkim/openscadscript-analyzer:0.1
 
 ## Downloads from git
 
