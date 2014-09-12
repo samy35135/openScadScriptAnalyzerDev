@@ -1,0 +1,6 @@
+{
+  "name": "OpenScad Script Analyzer",
+  "description": "..",
+  "repository": "https://github.com/jiyoungParkKim/openScadScriptAnalyzer.git",
+  "keywords": ["node", "express"]
+}

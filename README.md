@@ -94,7 +94,7 @@ To download things from thingiverse.com you need to have a access token from the
       --package.json      : server side dependencies ( used by Node.js)
 
 
-## Client structure
+## Client side
 
     --app                      : application codes
       --main
@@ -119,7 +119,7 @@ To download things from thingiverse.com you need to have a access token from the
       --socket
         --socket.service.js     : client socket conf
 
-## Server side structure
+## Server side 
 
     --api
       --thing
@@ -133,14 +133,15 @@ To download things from thingiverse.com you need to have a access token from the
         --Commandline.js         : Helper class for node execution in the Cli env
         --DataBag.js             : Helper class for thingiverse.service.js
         --index.js               : rounting conf
-        --openSadAnalyzer.js     : Helper class for parsing - it calls openscad-openjscad-translator module.
-        --parsingHelper.js
-        --requestHelper.js
-        --socketMsgHelper.js
-        --thingiverse.controller.js
-        --thingiverse.dao.js
-        --thingiverse.service.js
-        --thigiveseUtils.js
+        --openSadAnalyzer.js     : Helper class for parsing - parse scadfiles(using openscad-openjscad-translator module) 
+                                   and make statistics data 
+        --parsingHelper.js       : Helper class for parsing - save the result of parsing in the db
+        --requestHelper.js       : Helper class for http request
+        --socketMsgHelper.js     : Helper class for socket.io
+        --thingiverse.controller.js  : web controller
+        --thingiverse.dao.js         : data access class
+        --thingiverse.service.js     : service 
+        --thigiveseUtils.js          : utils
 
 
 
