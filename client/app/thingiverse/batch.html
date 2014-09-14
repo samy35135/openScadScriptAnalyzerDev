@@ -1,6 +1,6 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="inner cover" ng-if="!checkedToken">
+<div class="inner cover" ng-if="!flag.hasAccessToken">
 <br><br><br><br><br><br><br><br>
   <h1 class="cover-heading">Access Token is needed here :)</h1>
   <p class="lead">To download things, we need your access token that you got from www.thingiverse.com</p>
@@ -14,8 +14,7 @@
   </p>
 </div>
 
-
-<div class="inner cover" ng-if="checkedToken">
+<div class="inner cover" ng-if="checkedToken || flag.hasAccessToken">
   
 	<div class="col-md-12">
 	<form class="center-block form-inline" role="search">

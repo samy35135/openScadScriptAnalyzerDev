@@ -14,7 +14,14 @@ angular.module('openScadAnalyzerApp')
     $scope.awesomeThings = [];
     $scope.batchStatus = {};
     $scope.initStatus = {max:0, value:0};
-    socket.syncUpdatesProgressBar('batchStatus', $scope.initStatus, $scope.batchStatus, $scope.awesomeThings);
+
+    //socket.syncUpdatesProgressBar('batchStatus', $scope.initStatus, $scope.batchStatus, $scope.awesomeThings);
+
+
+    $http.get('/api/thingiverses/getAccessToken').success(function(flag) {
+        $scope.flag = flag; 
+    });
+
     $scope.checkMe = function(token){
       $http.post('/api/thingiverses/checkme', {token:token})
       .success(function(me) {
@@ -48,7 +55,7 @@ angular.module('openScadAnalyzerApp')
 
           $scope.awesomeThings.length = 0;  
           $scope.initStatus = initStatus;
-          //socket.syncUpdatesProgressBar('batchStatus', $scope.initStatus, $scope.batchStatus, $scope.awesomeThings);
+          socket.syncUpdatesProgressBar('batchStatus', $scope.initStatus, $scope.batchStatus, $scope.awesomeThings);
     
 	    });
   	};

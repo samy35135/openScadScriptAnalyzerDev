@@ -19,7 +19,7 @@ var socketMsgHelper = require('./socketMsgHelper');
 var parser = parsingHelper.newParsingHelper(socketMsgHelper, 'forceParse');
 parser.startParsing();
 
-var cliCallback = {};
+var cliCallback;
 
 exports.setCallback = function(_callback){
 	cliCallback = _callback;

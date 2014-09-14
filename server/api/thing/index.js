@@ -13,6 +13,9 @@ var router = express.Router();
 // router.delete('/:id', controller.destroy);
 
 router.post('/checkme', controller.checkme);
+router.get('/getAccessToken', controller.getAccessToken);
+
+
 router.get('/batch/:tag', controller.batch);
 router.get('/batch/:tag/:limite', controller.batch);
 router.get('/list/:page', controller.list);

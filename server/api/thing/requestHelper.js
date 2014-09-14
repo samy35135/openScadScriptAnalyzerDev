@@ -8,7 +8,13 @@ var async = require('async');
 exports.setAccessToken = function(token){
 	access_token = token;
 }
-
+exports.getAccessToken = function(cb){
+	console.log('access_token ' + access_token);
+	if(access_token === undefined)
+		cb(false);
+	else
+		cb(true);
+}
 exports.checkme = function(token, cb){
 	var uri = "https://api.thingiverse.com/users/me?access_token="+token;
 	request(uri, function(err, response, body) {

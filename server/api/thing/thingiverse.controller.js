@@ -13,6 +13,13 @@ var _ = require('lodash');
 var requestHelper = require('./requestHelper');
 var thingiverseService = thingiverseService = require('./thingiverse.service');
 
+exports.getAccessToken = function (req, res) {
+  requestHelper.getAccessToken(function(flag){
+    console.log('flag ' + flag);
+    return res.json(201, {hasAccessToken:flag});
+  });
+}
+
 exports.checkme = function(req, res){
   requestHelper.checkme(req.body.token, function(err, me){
     if(err) { return handleError(res, err); }
