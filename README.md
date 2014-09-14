@@ -66,6 +66,8 @@ To download things from thingiverse.com you need to have a access token from the
 
 ![example image](doc/main3.png "An exemplary image")
 
+Cli env : 
+![example image](doc/main4.png "An exemplary image")
 ## Project structure 
 
 
