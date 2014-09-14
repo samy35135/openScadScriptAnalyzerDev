@@ -2,7 +2,14 @@ var utils = require('./thingiverseUtils');
 var scadAnalyzer = require('./openScadAnalyzer');
 
 function ParsingHelper(socketMsgHelper, job){
+
 	var self = this;
+
+	self.cliCallback;
+	this.setCliCallback = function(_callback){
+		self.cliCallback = _callback;
+	}
+
 	self.lock = false;
 	self.isFinished = false;
 	
@@ -10,11 +17,8 @@ function ParsingHelper(socketMsgHelper, job){
 
 	this.addTarget = function(file){
 		targets.push(file);
-		
 		console.log('[PARSING TARGET ADDED] ' + file.name + ' : ' + file.id);
 	}
-	
-
 
 	this.parse = function(){
 		
@@ -59,8 +63,11 @@ function ParsingHelper(socketMsgHelper, job){
 
 				if(!self.lock && targets.length > 0){
 					self.parse();
-				}else{
-					
+				}
+
+				if(self.cliCallback != undefined && targets.length == 0){
+					clearInterval(self.interval);
+					self.cliCallback();
 				}
 				
 					// if(targets.length == 0){

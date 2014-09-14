@@ -5,9 +5,12 @@ var thingiverseDevUrl = "https://api.thingiverse.com";
 var utils = require('./thingiverseUtils');
 var async = require('async');
 
+exports.setAccessToken = function(token){
+	access_token = token;
+}
+
 exports.checkme = function(token, cb){
 	var uri = "https://api.thingiverse.com/users/me?access_token="+token;
-	//https://api.thingiverse.com/users/me?access_token=b11a7055d1ee64a0b9fcf3333e77899c
 	request(uri, function(err, response, body) {
 		if (!err && response.statusCode == 200) {
 			access_token = token;
@@ -62,7 +65,7 @@ exports.downloadThings = function(dataBag, currentPageNum, totalPageCnt, callbac
 				var thing = things.pop();
 				
 				if(!dataBag.hasThis(thing.id)){
-					
+					console.log("new Thing : "+ thing.id);
 					//////////////// target /////////////////
 					dataBag.addThingsToDownload(thing.id);
 					/////////////////////////////////////////
@@ -73,6 +76,7 @@ exports.downloadThings = function(dataBag, currentPageNum, totalPageCnt, callbac
 					}
 					
 				}else{
+					console.log("exist Thing : "+ thing.id);
 					//foundExistigCnt++;
 				}				
 			}

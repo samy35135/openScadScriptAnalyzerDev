@@ -27,106 +27,60 @@ var currentDB = devDB;
 var socketMsgHelper = require('./socketMsgHelper');
 socketMsgHelper.register(getSocket());
 
-//list('iphone', 1);
-function list(tag, page){
+exports.list = function(tag, page, callback){
 	doSomethingInDB(currentDB, function(){
 		service.list(tag, 1, function(err, things){
 			closeDB();
-			print('totalCount : ' + things.totalCount);
-			for(index in things.results){
-				print('thing : ' + things.results[index].name);
-			}
+			callback(things);
 		});
 	});//doSomethingInDB
-}
+};
 
-//batch('customizer', 5);
-function batch(tag, limitCnt){
+exports.batch = function(tag, limitCnt, cb){
 	doSomethingInDB(currentDB, function(){
-		//function(tag, limitCnt, cb)
+		service.setCallback(cb);
 		service.batch(tag, limitCnt, function(err, rtn){
-
-			// please close the db connection after testing 
 			print(rtn);
-			//closeDB(); can't close the connection in this code!!!
-
 		});//service.batchLimited
 	});//doSomethingInDB
-}
+};
 
-//statistics()
-function statistics(){
+exports.statistics = function(cb){
 	doSomethingInDB(currentDB, function(){
 		
 		service.stat(function(err, data){
 			console.log(data);
 			closeDB();
+			cb();
 		})
-	});//doSomethingInDB.length
-                                     
-}
+	});
+};
 
-
-//parsingHelperTest();
-function parsingHelperTest(){
+exports.parseNotParsedFiles = function(mode, cb){
 	doSomethingInDB(currentDB, function(){
-		
 		File
-		.find({name:/scad/, isParsed : 0, size : {$lt:10000}})
-		.populate('_thing', 'id') // only return the things id
-		.exec(function(err, files){
-			print('target count : '+ files.length);
-			if(files.length == 0){
-				closeDB();
-			}else{
-				var parser = parsingHelper.newParsingHelper();
-				parser.startParsing();
-				
-				for(var i = 0 ; i < files.length ; i ++){
-					parser.addTarget(files[i]);
-				}
-				// please close the db connection after testing 
-				//closeDB(); can't close the connection in this code!!!				
-			}			
-		});
-	});//doSomethingInDB.length
-                                     
-}
-
-//parseNotParsedFiles();
-function parseNotParsedFiles(){
-	doSomethingInDB(currentDB, function(){
-		
-		File
-		.find({name:/scad/, isParsed : -1, size : {$lt:10000}})
+		.find({name:/scad/, isParsed : mode, size : {$lt:10000}})
 		.populate('_thing', 'id') // only return the things id
 		.exec(function(err, files){
 
 			var parser = parsingHelper.newParsingHelper(socketMsgHelper, 'forceParse');
-			parser.startParsing();
 
+			parser.setCliCallback(cb);
 			
 			if(files.length == 0){
-				closeDB();
+				print('target not found');
+				cb();
 			}else{
-
-				
 				for(var i = 0 ; i < files.length ; i ++){
 					parser.addTarget(files[i]);
-				}
-				// please close the db connection after testing 
-				//closeDB(); can't close the connection in this code!!!				
-			}	
-			
+				}		
+			}
+			parser.startParsing();
 		});
-	});//doSomethingInDB.length
-                                     
-}
+	});
+};
 
-
-//ObjectId("53ff0fd71378a7730d2f20bc")
-//parseOneScad("540688c861a0244330920f67");
-function parseOneScad(_id){
+exports.parseOneScad = function(_id, cb){
 	doSomethingInDB(currentDB, function(){
 
 		File.findById(_id, function(err, file){
@@ -134,27 +88,28 @@ function parseOneScad(_id){
 			if(file != null){
 				print(file.name + ' : ' + file.size)
 				scadAnalyzer.parse(file, function(err, file){
-					if(err) errHandler(_id + ' : ' + err);
+					if(err) {
+						errHandler(_id + ' : ' + err);
+						cb();
+					}
 					else{
 									
 						file.save(function(err){
 							if(err) errHandler(_id + ' : ' + err);
 							print(file.stat);
 							closeDB();
+							cb();
 						});
 					}				
 				});//scadAnalyzer
 			}else{print(_id + ' is null')}
-			
 		})//findById
-
 	});//doSomethingInDB
-}//parseOneScad
-
+};
 
 //distinctIncludedFiles(/use <([^>]*)>;?/);
 //distinctIncludedFiles(/include <([^>]*)>;?/);
-function distinctIncludedFiles(regExp){
+exports.distinctIncludedFiles = function(regExp, cb){
 	doSomethingInDB(currentDB, function(){
 		//var regExp = /use <([^>]*)>;?/; <-- catch use tag
 		//var regExp = /include <([^>]*)>;?/;	<-- catch include tag
@@ -169,7 +124,6 @@ function distinctIncludedFiles(regExp){
 				for (var i in lines){
 					var line = lines[i];
 					if(regExp.test(line)){
-						//console.log(line)
 						var obj = {id:file._id, name:file.name, line:line};
 						target.push(obj);
 					}
@@ -180,17 +134,20 @@ function distinctIncludedFiles(regExp){
 			//////////////////////////////////////////////
 			closeDB();
 			//////////////////////////////////////////////
+			cb();
 		});// find
-	})	
-}//distinctIncludedFiles()
-
+	});	
+};
 
 //////////////////////////////////////////////////////////////////////////////////////
 function closeDB(){
 	mongoose.connection.close();
 	print('connection closed');
 }
-
+exports.closeDB = function(){
+	mongoose.connection.close();
+	print('connection closed');
+}
 function doSomethingInDB(dburi, outerCallback){
 	mongoose.connect(dburi);
 	var db = mongoose.connection;

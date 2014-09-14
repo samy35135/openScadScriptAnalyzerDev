@@ -19,8 +19,15 @@ var socketMsgHelper = require('./socketMsgHelper');
 var parser = parsingHelper.newParsingHelper(socketMsgHelper, 'forceParse');
 parser.startParsing();
 
+var cliCallback = {};
+
+exports.setCallback = function(_callback){
+	cliCallback = _callback;
+}
+
 exports.batch = function(tag, limitCnt, cb){
 	requestHelper.getTotalCntOfThings(tag, function(err, totalPageCnt, totalRemoteThingsCnt){
+		console.log('totalRemoteThingsCnt : '+ totalRemoteThingsCnt);
 		if(err) throw err; 
 		dao.findTags(tag, function(err, tags){
 			console.log('thingsFromDB.length : '+ tags.length);
@@ -29,6 +36,7 @@ exports.batch = function(tag, limitCnt, cb){
 			}
 			var dataBag = d.newDataBack(tag, totalRemoteThingsCnt, limitCnt);
 			dataBag.init(tags);		
+
 			cb(null, {max:dataBag.totalRemoteThingsCnt, value:dataBag.thingsFromDB.length});// initStatus
 			requestHelper.downloadThings(dataBag, 1, totalPageCnt, function(err){
 				if(err) return handleError('requestAllThings:downloadThings', err); 
@@ -118,27 +126,34 @@ function createOneThing(dataBag, index, thing_id){
 									// 	dataBag.parser.addTarget(rtn);
 									// }
 								}
+
+								thing.save(function(err){
+									if(err){
+										if(err) handleError('createOneThing:thing.save', err);
+									}else{
+										print(index + ' : ' + thing.id + ' saved -------------------------------');
+										//utils.sendSocketMsg(dataBag.socket, dataBag.totalRemoteThingsCnt, (dataBag.existingThingsCnt + index + 1), thing);
+										//utils.sendSocketMsg(dataBag.socket, dataBag.maxCnt, (index + 1), thing);//batch
+										// TODO
+										socketMsgHelper.sendSocketMsg('batch', {max:dataBag.maxCnt, value:(index + 1), thing:thing});
+									}
+									
+									if(index == dataBag.maxCnt - 1 ){
+										
+										print('****************************************************');
+										print('******************* fini ***************************');
+										print('****************************************************');
+										//dataBag.parser.isFinished = true;
+										if(cliCallback != null){
+											cliCallback();
+										}
+									}
+								});
+
+
 							});
 
-							thing.save(function(err){
-								if(err){
-									if(err) handleError('createOneThing:thing.save', err);
-								}else{
-									print(index + ' : ' + thing.id + ' saved -------------------------------');
-									//utils.sendSocketMsg(dataBag.socket, dataBag.totalRemoteThingsCnt, (dataBag.existingThingsCnt + index + 1), thing);
-									//utils.sendSocketMsg(dataBag.socket, dataBag.maxCnt, (index + 1), thing);//batch
-									// TODO
-									socketMsgHelper.sendSocketMsg('batch', {max:dataBag.maxCnt, value:(index + 1), thing:thing});
-								}
-								
-								if(index == dataBag.maxCnt - 1 ){
-									
-									print('****************************************************');
-									print('******************* fini ***************************');
-									print('****************************************************');
-									//dataBag.parser.isFinished = true;
-								}
-							});
+							
 						});
 					});// async.parallel
 				}				
@@ -206,10 +221,9 @@ exports.list = function(tag, page, callback){
 };
 
 exports.stat = function(callback){
-
 	async.parallel([
 		function(callback){
-			File.find({name:/scad/, isParsed:0}).count().exec(callback);
+			File.find({name:/scad/, $or: [{isParsed:0, isParsed:2}]}).count().exec(callback);
 		},
 		function(callback){
 			File.find({name:/scad/, isParsed:1}).count().exec(callback);
@@ -252,8 +266,6 @@ exports.reparse = function(mode, limit, filesize, callback){
 			for(var i = 0 ; i < files.length ; i ++){
 				parser.addTarget(files[i]);
 			}
-
-
 	});
 }
 

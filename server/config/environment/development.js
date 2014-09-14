@@ -5,7 +5,7 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/openscadanalyzer-dev'
+    uri: 'mongodb://localhost/openscadanalyzer-dev5'
   },
 
   seedDB: true
