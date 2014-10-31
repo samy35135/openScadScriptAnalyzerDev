@@ -4,13 +4,12 @@ var readline = require('readline'),
     rl = readline.createInterface(process.stdin, process.stdout);
 var promptText = "Please select one\n1. list by tag\n2. batch\n3. statistics\n"+
 				 "4. find scad files which have 'use' keyword\n5. find scad files which have 'include' keyword\n" +
-				 "6. parse scad files\n7. parse failed files\n8. parse one scad file\n";
+				 "6. parse scad files\n7. parse failed files\n8. parse one scad file\n\9. extract scad files";
 
 rl.setPrompt(promptText);
 rl.prompt();
 
 rl.on('line', function(line) {
-	//console.log(line);
     switch(parseInt(line)) {
     case 1:
 		getParams(rl, ['Tag','Page'], function(prompts, data){
@@ -67,12 +66,18 @@ rl.on('line', function(line) {
 	    	});
 		});
 		break;
+	case 9:
+		rl.question('mode? [1 : extract parsed scad files , 0 : extract parsing failed files]', function(mode){
+			cliSupport.extractScadFiles(mode, function(){
+				rl.close();
+			});
+		})
 	case 10:
     	cliSupport.closeDB();
     	break;
     default:
-     //console.log('Say what? I might have heard `' + line.trim() + '`');
       break;
+    
   }
   rl.prompt();
 }).on('close', function() {

@@ -46,8 +46,7 @@ exports.batch = function(tag, limitCnt, cb){
 };
 
 exports.statistics = function(cb){
-	doSomethingInDB(currentDB, function(){
-		
+	doSomethingInDB(currentDB, function(){		
 		service.stat(function(err, data){
 			console.log(data);
 			closeDB();
@@ -137,6 +136,49 @@ exports.distinctIncludedFiles = function(regExp, cb){
 			cb();
 		});// find
 	});	
+};
+
+exports.extractScadFiles = function(mode, cb){
+	
+	doSomethingInDB(currentDB, function(){
+		File
+		.find({name:/scad/, isParsed : mode})
+		.exec(function(err, files){
+			if(err){
+				console.log(err);
+				closeDB();
+			}else{
+				var cnt = files.length;
+				if(cnt > 0){
+
+					var fs = require('fs');
+					var path = require('path');
+					var config = require('../../config/environment');
+					var scadRoot = path.join(config.root, 'scadRoot');
+					if(mode == 0){
+						scadRoot += "/ParsingFailed";
+					}else if(mode == 1){
+						scadRoot += "/ParsingOK";
+					}
+
+					if(!fs.existsSync(scadRoot)){
+						fs.mkdirSync(scadRoot);
+					}
+
+					for(var i = 0 ; i < cnt ; i ++){
+						var file = files[i];
+						var filePath = scadRoot + "/" + file.name;
+						console.log("file : " + filePath);
+						if(!fs.existsSync(filePath)){
+							var data = file.content;
+							fs.writeFileSync(filePath, data);
+						}
+					}
+				}
+			}
+			cb();
+		});
+	});
 };
 
 //////////////////////////////////////////////////////////////////////////////////////
