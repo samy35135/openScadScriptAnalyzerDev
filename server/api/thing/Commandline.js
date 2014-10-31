@@ -155,6 +155,11 @@ exports.extractScadFiles = function(mode, cb){
 					var path = require('path');
 					var config = require('../../config/environment');
 					var scadRoot = path.join(config.root, 'scadRoot');
+
+					if(!fs.existsSync(scadRoot)){
+						fs.mkdirSync(scadRoot);
+					}
+
 					if(mode == 0){
 						scadRoot += "/ParsingFailed";
 					}else if(mode == 1){
