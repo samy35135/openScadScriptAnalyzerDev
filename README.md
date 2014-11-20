@@ -29,19 +29,10 @@ Pull database from docker repository
 
 Start mongoDB database
 
-	$ sudo docker kill $(sudo docker ps -a -q) && sudo docker rm $(sudo docker ps -a -q) && sudo docker run --name db -d jiyoungparkkim/mongodb_base:0.1
-
-
-Get the ip adress of the mongoDB server
-
-	$ for i in $(sudo docker ps -q); do ip=$(sudo docker inspect --format="{{ .NetworkSettings.IPAddress }}"" $i) done ;
-
-
-Edit [openScadScriptAnalyzer/server/config/environment/developement.js]
-
-	Change url to : mongodb://$ip/openscadanalyzer-dev
-
-
+	$ sudo docker run -d -p 27017:27017 --name mongodb jiyoungparkkim/mongodb_base:0.1 mongod
+	
+	be aware if your mongo already run on your machine, you maybe have to stop it.
+	
 Start server
 
 	$ sudo npm start
