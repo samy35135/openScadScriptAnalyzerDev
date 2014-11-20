@@ -2,38 +2,24 @@ OpenScadScriptAnalyzer
 ===
 OpenScadScripAnalyzer is an app runtime based on nodejs. You can download things(scad files) from [www.thingiverse.com](www.thingiverse.com) and parse them with OpenScadScriptAnalyzer. This project is published on the [Docker](https://www.docker.com/) also.
 
-##Ubuntu Installing
+##How to install ?
 
 ### Dependencies
 
-1 [NodeJS](http://nodejs.org/) is an open source, cross-platform runtime environment for server-side and networking applications. Node.js applications are written in JavaScript
+1 [Git](http://git-scm.com/)
 
-	$ sudo add-apt-repository ppa:chris-lea/node.js
-	$ sudo apt-get update
-	$ sudo apt-get install nodejs
+2 [NodeJS](http://nodejs.org/) 
 
+3 [Docker](https://www.docker.com/) 
 
-2 [Docker](https://www.docker.com/) is an open-source project that automates the deployment of applications inside software containers, by providing an additional layer of abstraction and automation of operating system–level virtualization on Linux.
+4 [Npm](https://www.npmjs.org/) 
 
-	$ sudo apt-get update
-	$ sudo apt-get install docker.io
-
-
-3 [Npm](https://www.npmjs.org/) is the default package manager for Node.js
-
-	$ sudo apt-get install npm
-
-
-4 [Bower](http://bower.io/) Bower is a package manager for Javascript libraries that allows you to define, version, and retrieve your dependencies.
-
-	$ sudo npm -g install bower
-
+5 [Bower](http://bower.io/)
 
 ### Install project
 
-1 [Git](http://git-scm.com/)
+1 Clone OpenScadScriptAnalyzer project
 
-	$ sudo apt-get install git
 	$ git clone https://github.com/jiyoungParkKim/openScadScriptAnalyzer.git
 	$ cd openScadScriptAnalyzer/
 	$ sudo npm install
