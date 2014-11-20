@@ -31,7 +31,7 @@ Start mongoDB database
 
 	$ sudo docker run -d -p 27017:27017 --name mongodb jiyoungparkkim/mongodb_base:0.1 mongod
 	
-	be aware if your mongo already run on your machine, you maybe have to stop it.
+Be aware if your mongo already run on your machine, you maybe have to stop it.
 	
 Start server
 
