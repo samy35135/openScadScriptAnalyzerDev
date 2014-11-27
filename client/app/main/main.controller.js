@@ -29,7 +29,7 @@ angular.module('openScadAnalyzerApp')
 
     $scope.data = {};
     $http.get('/api/thingiverses/stat').success(function(data) {
-      logger.info('main.controller.js');
+      //logger.info('main.controller.js');
       $scope.data = data;
       $scope.parsed = (data.parsed/data.total)*100;
       $scope.failed = (data.failed/data.total)*100;
