@@ -36,6 +36,7 @@ var socketio = require('socket.io')(server, {
 });
 require('./config/socketio')(socketio);
 require('./config/express')(app);
+// routes are defined in the next line
 require('./routes')(app);
 
 // Start server

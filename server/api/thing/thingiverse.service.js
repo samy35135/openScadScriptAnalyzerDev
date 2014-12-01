@@ -21,12 +21,23 @@ parser.startParsing();
 
 var cliCallback;
 
+var winston = require('winston');
+var logger = new (winston.Logger)({
+    transports: [
+    //  new (winston.transports.Console)(),
+      new (winston.transports.File)({ filename: 'logs.log' })
+    ]
+  });
+
+
 exports.setCallback = function(_callback){
 	cliCallback = _callback;
 }
 
 exports.batch = function(tag, limitCnt, cb){
+	logger.info('Fichier thingiverse.service.js | fonction batch ');
 	requestHelper.getTotalCntOfThings(tag, function(err, totalPageCnt, totalRemoteThingsCnt){
+		logger.info('Fichier thingiverse.service.js | fonction batch - getTotalCntOfThings');
 		console.log('totalRemoteThingsCnt : '+ totalRemoteThingsCnt);
 		if(err) throw err; 
 		dao.findTags(tag, function(err, tags){
@@ -58,6 +69,7 @@ maxCnt : 5
 ---------------------
  */
 function createThings(dataBag){
+	logger.info('Fichier thingiverse.service.js | fonction createThings(dataBag){');
 	//dataBag.toString();
 	for(var i = 0 ; i < dataBag.maxCnt ; i ++){
 		var thing_id = dataBag.thingsToDownload.pop();
@@ -73,6 +85,7 @@ function createThings(dataBag){
 }
 
 function createOneThing(dataBag, index, thing_id){
+	logger.info('Fichier thingiverse.service.js | fonction createOneThing(dataBag){');
 	// 1. download thing json data from remote site
 	Thing.getThisFromRemote(thing_id, function(err, thing){
 		if(err){
@@ -163,6 +176,7 @@ function createOneThing(dataBag, index, thing_id){
 }
 
 function downloadScadFiles(files, thing_id, callback){
+	logger.info('Fichier thingiverse.service.js | fonction downloadScadFiles');
 	_.each(files, function(_id){
 		
 		File
@@ -182,6 +196,7 @@ function downloadScadFiles(files, thing_id, callback){
 function isNumber(n) { return /^-?[\d.]+(?:e-?\d+)?$/.test(n); } 
 
 exports.list = function(tag, page, callback){
+	logger.info('Fichier thingiverse.service.js | fonction list');
 	console.log('tag ' + tag)
 	var skip = (page - 1 )* 20 ;
   	var opts = {skip : skip, limit : 20, sort:{modified:-1}};
@@ -221,6 +236,7 @@ exports.list = function(tag, page, callback){
 };
 
 exports.stat = function(callback){
+	logger.info('Fichier thingiverse.service.js | fonction stat');
 	async.parallel([
 		function(callback){
 			File.find({name:/scad/, $or: [{isParsed:0, isParsed:2}]}).count().exec(callback);
@@ -248,6 +264,7 @@ exports.stat = function(callback){
 
 //////////////////////////////////////////////////////////////////////////////////
 exports.reparse = function(mode, limit, filesize, callback){
+	logger.info('Fichier thingiverse.service.js | fonction reparse');
 	var query;
 	if(mode === 'parseAllFailedFiles'){
 		query = {name:/scad/, isParsed : 0, size : {$lt:filesize}};// 0 == failed
@@ -270,6 +287,7 @@ exports.reparse = function(mode, limit, filesize, callback){
 }
 
 exports.parseOneScad = function(callback){
+	logger.info('Fichier thingiverse.service.js | fonction parseOneScad');
 	File.findById(_id, function(err, file){
 		if(err) callback(err, null);
 		else
@@ -290,6 +308,8 @@ exports.parseOneScad = function(callback){
 }
 
 exports.distinctIncludedFiles = function(regExp, callback){
+	logger.info('Fichier thingiverse.service.js | fonction distinctIncludedFiles');
+
 	File.find({content:regExp}, function(err, files){
 		if(err) callback(err, null);
 		else

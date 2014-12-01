@@ -1,6 +1,13 @@
 var requirejs = require('requirejs');
 
 var config = require('../../config/environment');
+var winston = require('winston');
+var logger = new (winston.Logger)({
+    transports: [
+    //  new (winston.transports.Console)(),
+      new (winston.transports.File)({ filename: 'logs.log' })
+    ]
+  });
 
 requirejs.config({
     baseUrl: config.root + '/node_modules/openscad-openjscad-translator/src',
