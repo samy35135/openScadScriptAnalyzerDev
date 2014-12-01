@@ -1,27 +1,10 @@
-{"level":"info","message":"application launched","timestamp":"2014-12-01T14:45:40.810Z"}
-{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-01T14:45:41.123Z"}
-{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-01T14:45:41.124Z"}
-{"level":"info","message":"Fichier thingiverse.service.js | fonction list","timestamp":"2014-12-01T14:46:04.479Z"}
-{"level":"info","message":"Fichier thingiverse.controller.js | fonction list","timestamp":"2014-12-01T14:46:06.479Z"}
-{"level":"info","message":"Fichier thingiverse.service.js | fonction reparse","timestamp":"2014-12-01T14:46:40.418Z"}
-{"level":"info","message":"Fichier thingiverse.controller.js | fonction reparse","timestamp":"2014-12-01T14:46:40.458Z"}
-{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-01T14:46:41.174Z"}
-{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer","timestamp":"2014-12-01T14:46:41.250Z"}
-{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-01T14:46:46.334Z"}
-{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer","timestamp":"2014-12-01T14:46:46.479Z"}
-{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-01T14:46:51.631Z"}
-{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer","timestamp":"2014-12-01T14:46:51.828Z"}
-{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-01T14:46:57.026Z"}
-{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer","timestamp":"2014-12-01T14:46:57.035Z"}
-{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-01T14:47:02.051Z"}
-{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer","timestamp":"2014-12-01T14:47:02.078Z"}
-{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-01T14:47:07.108Z"}
-{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer","timestamp":"2014-12-01T14:47:07.208Z"}
-{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-01T14:47:12.314Z"}
-{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer","timestamp":"2014-12-01T14:47:12.346Z"}
-{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-01T14:47:17.386Z"}
-{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer","timestamp":"2014-12-01T14:47:17.454Z"}
-{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-01T14:47:22.527Z"}
-{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer","timestamp":"2014-12-01T14:47:22.550Z"}
-{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-01T14:47:27.580Z"}
-{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer","timestamp":"2014-12-01T14:47:27.594Z"}
+{"level":"info","message":"application launched","timestamp":"2014-12-01T16:37:38.842Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-01T16:37:39.153Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-01T16:37:39.153Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-01T16:44:10.868Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-01T16:44:10.869Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-01T16:44:25.223Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-01T16:44:25.225Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-01T16:44:47.274Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-01T16:44:47.275Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction list","timestamp":"2014-12-01T16:45:01.059Z"}
