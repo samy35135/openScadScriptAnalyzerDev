@@ -23,23 +23,24 @@ Clone OpenScadScriptAnalyzer project
 
 The application uses a mongo database. There's two ways of using a database
 
-1- Docker
+###With [Docker](https://www.docker.com/) 
 
-You have to install [Docker](https://www.docker.com/) first.
-
-Pull the database
+Pull the database and start the container
 
 	$ sudo docker pull jiyoungparkkim/mongodb_base:0.1
-
-Start mongoDB
-
 	$ sudo docker run -d -p 27017:27017 --name mongodb jiyoungparkkim/mongodb_base:0.1 mongod
+
 	
 #####If you have already mongo installed, you may have to stop it.
 
 
-	
-Start server
+###With [Mongo](http://www.mongodb.org/) 
+
+Download and install mongoDB
+
+### Start the application
+
+Move to the project folder and run
 
 	$ sudo npm start
 
