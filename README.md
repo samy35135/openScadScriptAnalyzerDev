@@ -6,9 +6,9 @@ OpenScadScripAnalyzer is an app runtime based on nodejs. You can download things
 
 ### Dependencies
 
-* [Git](http://git-scm.com/)
+* [Git](http://git-scm.com/) 
 * [NodeJS](http://nodejs.org/) 
-* [Docker](https://www.docker.com/) 
+* [Docker](https://www.docker.com/) if you want to use Docker instead
 * [Npm](https://www.npmjs.org/) 
 * [Bower](http://bower.io/)
 
@@ -21,17 +21,23 @@ Clone OpenScadScriptAnalyzer project
 	$ sudo npm install
 	$ bower install
 
+The application uses a mongo database. There's two ways of using a database
 
-Pull database from docker repository
+1- Docker
+
+You have to install [Docker](https://www.docker.com/) first.
+
+Pull the database
 
 	$ sudo docker pull jiyoungparkkim/mongodb_base:0.1
 
-
-Start mongoDB database
+Start mongoDB
 
 	$ sudo docker run -d -p 27017:27017 --name mongodb jiyoungparkkim/mongodb_base:0.1 mongod
 	
-Be aware if your mongo already run on your machine, you maybe have to stop it.
+#####If you have already mongo installed, you may have to stop it.
+
+
 	
 Start server
 
