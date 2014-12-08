@@ -109,6 +109,7 @@ This project is made with ['angular-fullstack'](https://github.com/DaftMonk/gene
 You can see the client schema on this link (lien à mettre !).
 
 ./client/app.js will load all the requirement for running the client side. 
+
 1. browser’s requests will reach the index.html.
 2. index.html call the controller ./client/app/main/main.controller.js.
 3. the controller will send a GET request on localhost:9000/api/thingiverses/{param}
