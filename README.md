@@ -201,14 +201,14 @@ Here is the server architecture :
 
 ### What are the used technologies ?
 
-[**GIT :**](http://git-scm.com/) is a distributed revision control system
-**MongoDB :** SGBD orienté documents qui est répartissable sur plusieurs machines. De plus, il ne nécessite pas de schéma de base de données prédéfini
-[**Docker :**](https://www.docker.com/whatisdocker/) is an open platform for developers and sysadmins to build, ship, and run distributed applications
-[**Bower :**](http://bower.io/) manage your front-end dependencies
-[**Npm :**](https://www.npmjs.org/) is a command-line utility for interacting with said repository that aids in package installation, version management, and dependency management
-[**Grunt :**](http://gruntjs.com/) Automating front-end and JavaScript workflow tasks 
-[**Node :**](http://nodejs.org/) is an open source, cross-platform runtime environment for server-side and networking applications
-[**Angular :**](https://angularjs.org/)  This project is made with ['angular-fullstack'](https://github.com/DaftMonk/generator-angular-fullstack) generator of [Yeoman](http://yeoman.io)
+* [**GIT :**](http://git-scm.com/) is a distributed revision control system
+* **MongoDB :** SGBD orienté documents qui est répartissable sur plusieurs machines. De plus, il ne nécessite pas de schéma de base de données prédéfini
+* [**Docker :**](https://www.docker.com/whatisdocker/) is an open platform for developers and sysadmins to build, ship, and run distributed applications
+* [**Bower :**](http://bower.io/) manage your front-end dependencies
+* [**Npm :**](https://www.npmjs.org/) is a command-line utility for interacting with said repository that aids in package installation, version management, and dependency management
+* [**Grunt :**](http://gruntjs.com/) Automating front-end and JavaScript workflow tasks 
+* [**Node :**](http://nodejs.org/) is an open source, cross-platform runtime environment for server-side and networking applications
+* [**Angular :**](https://angularjs.org/)  This project is made with * ['angular-fullstack'](https://github.com/DaftMonk/generator-angular-fullstack) generator of [Yeoman](http://yeoman.io)
 
 ### How can I have a token access ?
 
