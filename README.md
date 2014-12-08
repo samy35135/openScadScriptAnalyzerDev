@@ -60,9 +60,9 @@ A thing has a .scad file that contains a program to print this 3D object with a 
 There are 4 tabs in the interface :
 
 * **Home** : Show a chart showing the number of downloaded, parsed and failled things
-* **Customizerble Things** : List things by tags ( default : customizer)
-* **Download Things** : Allows yout to download more things. You need an access token to do this. Follow [this tutorial](http://www.thingiverse.com/developers/getting-started) to get one.
-* **Parse Things** : Parse a number of Things to extract data such as number of variables, functions, the depth of the file...
+* [**Customizerble Things**](/doc/main.png) : List things by tags ( default : customizer)
+* [**Download Things**](/doc/main2.png) : Allows yout to download more things. You need an access token to do this. Follow [this tutorial](http://www.thingiverse.com/developers/getting-started) to get one.
+* [**Parse Things**](/doc/main3.png) : Parse a number of Things to extract data such as number of variables, functions, the depth of the file...
 
 ##How it works?
 
@@ -106,7 +106,7 @@ This project is made with ['angular-fullstack'](https://github.com/DaftMonk/gene
 
 ## Client side
 
-You can see the client schema on this link (lien à mettre !).
+![Client schema](/doc/client.jpg "Client schema")
 
 ./client/app.js will load all the requirement for running the client side. 
 
@@ -141,6 +141,7 @@ Here is the client architecture :
 
 ## Server side 
 
+![Serveur schema](/doc/serveur.jpg "Serveur schema")
 
 All the routes with /api/thingervses/ wiil reach the server side.
 
