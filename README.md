@@ -202,7 +202,7 @@ Here is the server architecture :
 ### What are the used technologies ?
 
 * [**GIT :**](http://git-scm.com/) is a distributed revision control system
-* **MongoDB :** SGBD orienté documents qui est répartissable sur plusieurs machines. De plus, il ne nécessite pas de schéma de base de données prédéfini
+* [**MongoDB :**](http://www.mongodb.org/) SGBD orienté documents qui est répartissable sur plusieurs machines. De plus, il ne nécessite pas de schéma de base de données prédéfini
 * [**Docker :**](https://www.docker.com/whatisdocker/) is an open platform for developers and sysadmins to build, ship, and run distributed applications
 * [**Bower :**](http://bower.io/) manage your front-end dependencies
 * [**Npm :**](https://www.npmjs.org/) is a command-line utility for interacting with said repository that aids in package installation, version management, and dependency management
@@ -213,6 +213,6 @@ Here is the server architecture :
 ### How can I have a token access ?
 
 To download things from thingiverse.com you need to have a access token from the developer site.
-Follow  to get your access token.
+Follow [this tutorial](http://www.thingiverse.com/developers/getting-started) to get your access token.
 
 
