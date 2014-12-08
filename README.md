@@ -154,6 +154,7 @@ When you write the command “npm start”,  the first file launch will be ./ser
 * The controller will required  the service layer : ./server/api/thing/thingiverse.service.js. 
 
 
+
     ├─ api
       ├─ thing
         ├─ model
