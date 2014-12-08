@@ -137,7 +137,7 @@ Here is the client architecture :
 
 ### Server side 
 
-![Serveur schema](/doc/serveur.jpg "Serveur schema")
+![Serveur schema](/doc/server.jpg "Serveur schema")
 
 All the routes with /api/thingervses/ wiil reach the server side.
 
