@@ -153,7 +153,7 @@ When you write the command “npm start”,  the first file launch will be ./ser
 * The controller of the server side is ./server/api/thing/thingiverse.controller.js
 * The controller will required  the service layer : ./server/api/thing/thingiverse.service.js. 
 
-
+Here is the server architecture :
 
     ├─ api
       ├─ thing
@@ -167,8 +167,7 @@ When you write the command “npm start”,  the first file launch will be ./ser
         ├─ Commandline.js         : Helper class for node execution in the Cli env
         ├─ DataBag.js             : Helper class for thingiverse.service.js
         ├─ index.js               : rounting conf
-        ├─ openSadAnalyzer.js     : Helper class for parsing - parse scadfiles(using openscad-openjscad-translator module) 
-                                   and make statistics data 
+        ├─ openSadAnalyzer.js     : Helper class for parsing - parse scadfiles(using openscad-openjscad-translator module) and make statistics data 
         ├─ parsingHelper.js       : Helper class for parsing - save the result of parsing in the db
         ├─ requestHelper.js       : Helper class for http request
         ├─ socketMsgHelper.js     : Helper class for socket.io
@@ -176,7 +175,6 @@ When you write the command “npm start”,  the first file launch will be ./ser
         ├─ thingiverse.dao.js         : data access class
         ├─ thingiverse.service.js     : service 
         ├─ thigiveseUtils.js          : utils
-
 # To do
 
 * Faire un outil en ligne de commande capable de :
