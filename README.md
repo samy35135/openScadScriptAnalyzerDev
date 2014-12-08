@@ -100,11 +100,7 @@ This project is separated in 2 sides :
       ├─ bower.json        : client side dependencies ( used by AngularJS)
       ├─ package.json      : server side dependencies ( used by Node.js)
 
-### Angular
-
-This project is made with ['angular-fullstack'](https://github.com/DaftMonk/generator-angular-fullstack) generator of [Yeoman](http://yeoman.io/
-
-## Client side
+### Client side
 
 ![Client schema](/doc/client.jpg "Client schema")
 
@@ -139,7 +135,7 @@ Here is the client architecture :
       ├─ socket
         ├─ socket.service.js     : client socket conf
 
-## Server side 
+### Server side 
 
 ![Serveur schema](/doc/serveur.jpg "Serveur schema")
 
@@ -193,10 +189,30 @@ Here is the server architecture :
 * Faire une étude sur les fichiers scad qui ne compilent pas
 * Implémenter un extracteur de paramètres (web + console) pour chaque “things” + tests
 * Implémenter un configurateur (web + console) + tests (à voir)
+ 
 
-# FAQ
+## Bugs & known issues
 
-## How can I have a token access ?
+* Some scad files aren't correctly parsed.
+* Bower isn't executed after npm post-installation
+* Some scad statistics are false (and 2 last columns clean)
+
+## FAQ
+
+### What are the used technologies ?
+
+[**GIT :**](http://git-scm.com/) is a distributed revision control system
+**MongoDB :** SGBD orienté documents qui est répartissable sur plusieurs machines. De plus, il ne nécessite pas de schéma de base de données prédéfini
+[**Docker :**](https://www.docker.com/whatisdocker/) is an open platform for developers and sysadmins to build, ship, and run distributed applications
+[**Bower :**](http://bower.io/) manage your front-end dependencies
+[**Npm :**](https://www.npmjs.org/) is a command-line utility for interacting with said repository that aids in package installation, version management, and dependency management
+[**Grunt :**](http://gruntjs.com/) Automating front-end and JavaScript workflow tasks 
+[**Node :**](http://nodejs.org/) is an open source, cross-platform runtime environment for server-side and networking applications
+[**Angular :**](https://angularjs.org/)  This project is made with ['angular-fullstack'](https://github.com/DaftMonk/generator-angular-fullstack) generator of [Yeoman](http://yeoman.io)
+
+### How can I have a token access ?
 
 To download things from thingiverse.com you need to have a access token from the developer site.
 Follow  to get your access token.
+
+
