@@ -186,6 +186,13 @@ Here is the server architecture :
 
 ## FAQ
 
+### What is the project licence ?
+
+Les projets sous GitHub sont toujours des projets sous licence open source. Concernant notre projet, il possède une double licence open source: 
+* [Apache Software License 2.0 ("ASL")](http://www.apache.org/licenses/LICENSE-2.0)
+* [jOOQ License and Maintenance Agreement ("jOOQ License")](http://www.jooq.org/legal/licensing)
+See the licence file
+
 ### What are the used technologies ?
 
 * [**GIT :**](http://git-scm.com/) is a distributed revision control system
