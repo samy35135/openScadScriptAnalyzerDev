@@ -112,28 +112,20 @@ This project is separated in 2 sides :
 
 Here is the client architecture :
 
-    ├─ app                      : application codes
-      ├─ main
-        ├─ main.controller.js   : controller
-        ├─ main.html            :
-        ├─ main.js              : uiRouting config of main module
-      ├─ thingiverse           
-        ├─ batch.html           : download things here
-        ├─ parse.html           : parse things here
-        ├─ thingiverse.batch.controller.js   : controller of batch.html
-        ├─ thingiverse.controller.js         : controller of main.html
-        ├─ thingiverse.foceParsing.controller.js : controller of parse.html
-        ├─ thingiverse.html     : thing list
-        ├─ tingiverse.js        : routing conf of thingiverse module
-        ├─ tingiverse.service.js : service class of thingiverse.controller.js
-      ├─ app.js                  : angular module configulation
-    ├─ assets                    : public resources - images...
-    ├─ components                : common components here
-      ├─ navbar                  
-        ├─ navbar.controller.js  : 
-        ├─ navbar.html
-      ├─ socket
-        ├─ socket.service.js     : client socket conf
+    ├─ app
+      ├─ main				: Home page folder
+      ├─ thingiverse			: Others page folder (contains views & controllers)
+        ├─ batch.html           	: Download things page template
+        ├─ parse.html           	: Parse things page template
+        ├─ thingiverse.html     	: Thing list page template
+        ├─ tingiverse.js        	: Routing conf of thingiverse module
+        ├─ thingiverse.batch.controller.js   		: Controller of batch.html
+        ├─ thingiverse.controller.js         		: Controller of main.html
+        ├─ thingiverse.forceParsing.controller.js 	: Controller of parse.html
+        ├─ tingiverse.service.js 	: Service class of thingiverse.controller.js
+      ├─ app.js                  	: Angular module configulation client side
+    ├─ components                	: Common components (navbar, modal)
+    ├─ socket				: Client socket configuration
 
 ### Server side 
 
@@ -157,24 +149,19 @@ Here is the server architecture :
 
     ├─ api
       ├─ thing
-        ├─ model
-          ├─ Category.model.js
-          ├─ Comment.model.js
-          ├─ File.model.js
-          ├─ Pagination.js
-          ├─ Tag.model.js
-          ├─ Thing.model.js
-        ├─ Commandline.js         : Helper class for node execution in the Cli env
-        ├─ DataBag.js             : Helper class for thingiverse.service.js
-        ├─ index.js               : rounting conf
-        ├─ openSadAnalyzer.js     : Helper class for parsing - parse scadfiles(using openscad-openjscad-translator module) and make statistics data 
-        ├─ parsingHelper.js       : Helper class for parsing - save the result of parsing in the db
-        ├─ requestHelper.js       : Helper class for http request
-        ├─ socketMsgHelper.js     : Helper class for socket.io
-        ├─ thingiverse.controller.js  : web controller
-        ├─ thingiverse.dao.js         : data access class
-        ├─ thingiverse.service.js     : service 
-        ├─ thigiveseUtils.js          : utils
+        ├─ model			: Models JS folder (Category/Comment/File/Pagination/Tag/Thing)
+        ├─ Commandline.js         	: Helper class for node execution in the client env (see TO DO list)
+        ├─ DataBag.js             	: Helper class for thingiverse.service.js
+        ├─ index.js               	: rounting conf
+        ├─ openSadAnalyzer.js     	: Helper class for parsing - parse scadfiles(using openscad-openjscad-translator module) and make statistics data 
+        ├─ parsingHelper.js       	: Helper class for parsing - save the result of parsing in the db
+        ├─ requestHelper.js       	: Helper class for http request
+        ├─ socketMsgHelper.js     	: Helper class for socket.io
+        ├─ thingiverse.controller.js  	: Web controller contains actions functions
+        ├─ thingiverse.dao.js         	: Data access class
+        ├─ thingiverse.service.js     	: Download things from Thingiverse
+        ├─ thigiveseUtils.js          	: Utils
+        
 # To do
 
 * Faire un outil en ligne de commande capable de :
