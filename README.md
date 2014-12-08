@@ -13,7 +13,7 @@ OpenScadScripAnalyzer is an app runtime based on nodejs. You can download things
 
 ### Install application
 
-### Using Git
+#### Using Git
 Clone OpenScadScriptAnalyzer project and install it.
 
 	$ git clone https://github.com/jiyoungParkKim/openScadScriptAnalyzer.git
