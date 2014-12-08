@@ -157,3 +157,18 @@ Follow  to get your access token.
         ├─ thingiverse.dao.js         : data access class
         ├─ thingiverse.service.js     : service 
         ├─ thigiveseUtils.js          : utils
+
+# To do
+
+* Faire un outil en ligne de commande capable de :
+  * Télécharger les “things” à partir de l’API Thingiverse 
+  * Lister :
+    * les fichiers scad parsés 
+    * les fichiers scad non parsés (+trace d’erreur)
+  * Générer un CSV comprenant :
+    * les statistiques d’un fichier scad
+    * toutes les statistiques des fichiers scad
+* Écrire des cas de test pour le module statistiques
+* Faire une étude sur les fichiers scad qui ne compilent pas
+* Implémenter un extracteur de paramètres (web + console) pour chaque “things” + tests
+* Implémenter un configurateur (web + console) + tests (à voir)
