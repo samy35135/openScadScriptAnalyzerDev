@@ -68,6 +68,11 @@ There are 4 tabs in the interface :
 
 ### Architecture
 
+This project is separated in 2 sides :
+* When you go on localhost:9000 on your browser that concern the **client side** of the repository
+* When you write "npm start", that concern the **server side** of the repository.
+
+
 ### Project structure 
 
 
@@ -95,21 +100,18 @@ There are 4 tabs in the interface :
       ├─ bower.json        : client side dependencies ( used by AngularJS)
       ├─ package.json      : server side dependencies ( used by Node.js)
 
-
-	#SAMY#CESTPASSORCIER
-
 ### Angular
 
-This project is made with ['angular-fullstack'](https://github.com/DaftMonk/generator-angular-fullstack) generator of [Yeoman](http://yeoman.io/)
-
-### Access Token
-
-To download things from thingiverse.com you need to have a access token from the developer site.
-Follow  to get your access token.
-
-
+This project is made with ['angular-fullstack'](https://github.com/DaftMonk/generator-angular-fullstack) generator of [Yeoman](http://yeoman.io/
 
 ## Client side
+
+You can see the client schema on this link (lien à mettre !).
+
+./client/app.js will load all the requirement for running the client side. 
+1 - browser’s requests will reach the index.html.
+2 - index.html call the controller ./client/app/main/main.controller.js.
+3 - the controller will send a GET request on localhost:9000/api/thingiverses/{param}
 
     ├─ app                      : application codes
       ├─ main
@@ -135,6 +137,22 @@ Follow  to get your access token.
         ├─ socket.service.js     : client socket conf
 
 ## Server side 
+
+
+All the routes with /api/thingervses/ wiil reach the server side.
+
+You can see the client schema on this link (lien à mettre !).
+
+When you write the command “npm start”,  the first file launch will be ./server/app.js.
+* app.js will load all the requirement for running the server side. :
+  * loading  index.js file and other routes 
+    example : For the {param} “stat”, the route is :
+    <code>router.get(‘/stat’, controller.stat)</code>
+  * That means the stat processing is program on controller.stat().
+* Most files concerning the running server side was developed on ./server/api/thing
+* The controller of the server side is ./server/api/thing/thingiverse.controller.js
+* The controller will required  the service layer : ./server/api/thing/thingiverse.service.js. 
+
 
     ├─ api
       ├─ thing
@@ -172,3 +190,10 @@ Follow  to get your access token.
 * Faire une étude sur les fichiers scad qui ne compilent pas
 * Implémenter un extracteur de paramètres (web + console) pour chaque “things” + tests
 * Implémenter un configurateur (web + console) + tests (à voir)
+
+# FAQ
+
+## How can I have a token access ?
+
+To download things from thingiverse.com you need to have a access token from the developer site.
+Follow  to get your access token.
