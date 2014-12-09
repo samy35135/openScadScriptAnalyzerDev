@@ -133,17 +133,15 @@ Here is the client architecture :
 
 All the routes with /api/thingervses/ wiil reach the server side.
 
-You can see the client schema on this link (lien à mettre !).
-
-When you write the command “npm start”,  the first file launch will be ./server/app.js.
-* app.js will load all the requirement for running the server side. :
+When you write the command “npm start”,  the first file launched will be ./server/app.js.
+* app.js will load all the requirement to run the server side :
   * loading  index.js file and other routes 
     example : For the {param} “stat”, the route is :
     <code>router.get(‘/stat’, controller.stat)</code>
-  * That means the stat processing is program on controller.stat().
-* Most files concerning the running server side was developed on ./server/api/thing
-* The controller of the server side is ./server/api/thing/thingiverse.controller.js
-* The controller will required  the service layer : ./server/api/thing/thingiverse.service.js. 
+  * That means the stat processing code is writen on controller.stat().
+* Most files concerning the server side are stored in server/api/thing
+* The controller of the server side is server/api/thing/thingiverse.controller.js
+* The controller will require the service layer : server/api/thing/thingiverse.service.js. 
 
 Here is the server architecture :
 
@@ -164,31 +162,30 @@ Here is the server architecture :
         
 # To do
 
-* Faire un outil en ligne de commande capable de :
-  * Télécharger les “things” à partir de l’API Thingiverse 
-  * Lister :
-    * les fichiers scad parsés 
-    * les fichiers scad non parsés (+trace d’erreur)
-  * Générer un CSV comprenant :
-    * les statistiques d’un fichier scad
-    * toutes les statistiques des fichiers scad
-* Écrire des cas de test pour le module statistiques
-* Faire une étude sur les fichiers scad qui ne compilent pas
-* Implémenter un extracteur de paramètres (web + console) pour chaque “things” + tests
-* Implémenter un configurateur (web + console) + tests (à voir)
+* Implement a command line interface that is able to  :
+  * Download things from the Thingiverse API
+  * List :
+    * Successfully parsed scads 
+    * Fail scads + stacktrace
+  * Generate a CSV containing :
+    * A .scad file statistic's
+    * All scads statistic's
+* Write a test case for the statistic module
+* Try to figure out while some files fail to parse
+* Implement a parameter extractor for each thing (web and console interface)
+* Implement a configurator (web and console interface)
  
-
 ## Bugs & known issues
 
 * Some scad files aren't correctly parsed.
 * Bower isn't executed after npm post-installation
-* Some scad statistics are false (and 2 last columns clean)
+* Some scad statistics are false (and the 2 last columns are empty)
 
 ## FAQ
 
 ### What is the project licence ?
-
-Les projets sous GitHub sont toujours des projets sous licence open source. Concernant notre projet, il possède une double licence open source: 
+ 
+ This project has a double open source licence : 
 * [Apache Software License 2.0 ("ASL")](http://www.apache.org/licenses/LICENSE-2.0)
 * [jOOQ License and Maintenance Agreement ("jOOQ License")](http://www.jooq.org/legal/licensing)
 See the licence file
@@ -196,7 +193,7 @@ See the licence file
 ### What are the used technologies ?
 
 * [**GIT :**](http://git-scm.com/) is a distributed revision control system
-* [**MongoDB :**](http://www.mongodb.org/) SGBD orienté documents qui est répartissable sur plusieurs machines. De plus, il ne nécessite pas de schéma de base de données prédéfini
+* [**MongoDB :**](http://www.mongodb.org/) is an open-source document and NoSQL database. Written in C++
 * [**Docker :**](https://www.docker.com/whatisdocker/) is an open platform for developers and sysadmins to build, ship, and run distributed applications
 * [**Bower :**](http://bower.io/) manage your front-end dependencies
 * [**Npm :**](https://www.npmjs.org/) is a command-line utility for interacting with said repository that aids in package installation, version management, and dependency management
@@ -208,5 +205,11 @@ See the licence file
 
 To download things from thingiverse.com you need to have a access token from the developer site.
 Follow [this tutorial](http://www.thingiverse.com/developers/getting-started) to get your access token.
+
+### Can I use Docker only to host the database ?
+
+Yes of course.
+Just run <code>$ sudo docker run -d -p 27017:27017 --name mongodb jiyoungparkkim/mongodb_base:0.1 mongod</code> and 
+edit the database adress in <code>server/config/environment/development.js</code> to localhost:27017/openscadanalyzer-dev
 
 
