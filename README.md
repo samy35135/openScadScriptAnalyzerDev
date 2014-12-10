@@ -138,7 +138,7 @@ When you write the command “npm start”,  the first file launched will be ./s
   * loading  index.js file and other routes 
     example : For the {param} “stat”, the route is :
     <code>router.get(‘/stat’, controller.stat)</code>
-  * That means the stat processing code is writen on controller.stat().
+    That means the stat processing code is writen on controller.stat().
 * Most files concerning the server side are stored in server/api/thing
 * The controller of the server side is server/api/thing/thingiverse.controller.js
 * The controller will require the service layer : server/api/thing/thingiverse.service.js. 
@@ -168,8 +168,8 @@ Here is the server architecture :
     * Successfully parsed scads 
     * Fail scads + stacktrace
   * Generate a CSV containing :
-    * A .scad file statistic's
-    * All scads statistic's
+    * A .scad file statistics
+    * All scads statistics
 * Write a test case for the statistic module
 * Try to figure out while some files fail to parse
 * Implement a parameter extractor for each thing (web and console interface)
