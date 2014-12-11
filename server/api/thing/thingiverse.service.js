@@ -57,6 +57,8 @@ exports.batch = function(tag, limitCnt, cb){
 	})
 }
 
+
+
 /*
 ---- dataBack ex ----
 socket : [object Object]
@@ -233,6 +235,69 @@ exports.list = function(tag, page, callback){
 		var pops = 'tags categories files comments';
 	  	Thing.findPaginated( filter, opts, pops, callback);// Thing
 	}
+};
+
+exports.listByState = function(nbResults, state, callback){
+	logger.info('Fichier thingiverse.service.js | fonction listByState');
+	
+	var pops = '_thing';
+	var defaults = {skip : 0, limit : 50};
+
+	if(isNumber(nbResults)){
+		var opts = {limit : nbResults};
+	}
+	opts = _.extend({}, defaults, opts);
+
+	if(state == 2 || state == 1) {
+		var filter = {'isParsed': state};
+	}
+
+	filter = _.extend({}, filter);
+
+	var cntQry = File.find(filter);
+	var qry = File.find(filter).populate(pops);
+
+	if (opts.fields) {
+		qry = qry.select(opts.fields);
+	}
+
+	if (opts.sort) {
+    qry = qry.sort(opts.sort);
+  }
+  if (opts.fields) {
+    qry = qry.select(opts.fields);
+  }
+
+  qry = qry.limit(opts.limit).skip(opts.skip);
+
+  async.parallel(
+    [
+      function (callback) {
+        cntQry.count(callback);
+      },
+      function (callback) {
+        qry.exec(callback);
+      }
+    ],
+    function (err, results) {
+      if (err) return cb(err);
+      var count = 0, ret = [];
+
+      _.each(results, function (r) {
+
+        if (typeof(r) == 'number') {
+          count = r;
+        } else if (typeof(r) != 'number') {
+          ret = r;
+        }
+      });
+
+      callback(null, {totalCount : count, results : ret});
+    }
+  );
+
+  return qry;
+
 };
 
 exports.stat = function(callback){

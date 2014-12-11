@@ -2,6 +2,76 @@ var cliSupport = require('./Commandline');
 var requestHelper = require('./requestHelper');
 var readline = require('readline'),
     rl = readline.createInterface(process.stdin, process.stdout);
+var promptText = "Please select one\n1. Download things\n2. List parsed scad files\n3. List failed scad files\n"+
+				 "4. Generate global statistics\n5. Generate specific file statistics\n> ";
+
+rl.setPrompt(promptText);
+rl.prompt();
+
+rl.on('line', function(line) {
+    switch(parseInt(line)) {
+    case 1:
+    	// Ask for access token
+		checkme(function(){
+			// Ask for limit size
+			getParams(rl, ['Tag','Limit'], function(prompts, data){
+				cliSupport.batch(data[prompts[0]], data[prompts[1]], function(){
+					cliSupport.closeDB();
+					rl.close();
+				});
+			});
+		});
+		break;
+    case 2:
+    	getParams(rl, ['results'], function(prompts, data){
+			cliSupport.listByState(data[prompts[0]], 1, function(files){
+				for(index in files.results){
+					print(index + '. ' + files.results[index].name);
+				}
+				print('Total parsed scad : ' + files.totalCount);
+				rl.close();
+			});
+		});
+      	break;
+    case 3:
+    	getParams(rl, ['results'], function(prompts, data){
+			cliSupport.listByState(data[prompts[0]], 2, function(files){
+				for(index in files.results){
+					print(index + '. ' + files.results[index].name);
+				}
+				print('Total failed scad : ' + files.totalCount);
+				rl.close();
+			});
+		});
+      	break;
+	case 4:
+    	
+	case 5:
+    	
+	case 6:
+    	
+	case 7:
+    	
+	case 8:
+		
+	case 9:
+		
+		
+	case 10:
+    		cliSupport.closeDB();
+    		break;
+    	default:
+     	break;
+    
+  }
+  rl.prompt();
+}).on('close', function() {
+  console.log('Have a great day!');
+  process.exit(0);
+});
+
+/*
+
 var promptText = "Please select one\n1. list by tag\n2. batch\n3. statistics\n"+
 				 "4. find scad files which have 'use' keyword\n5. find scad files which have 'include' keyword\n" +
 				 "6. parse scad files\n7. parse failed files\n8. parse one scad file\n\9. extract scad files\n";
@@ -90,10 +160,10 @@ rl.on('line', function(line) {
 }).on('close', function() {
   console.log('Have a great day!');
   process.exit(0);
-});
+});*/
 
 function checkme(callback){
-	rl.question('Access Token?', function(token) {
+	rl.question('Access Token > ', function(token) {
 		requestHelper.checkme(token, function(err, me){
 			if(err) {
 				checkme(callback);

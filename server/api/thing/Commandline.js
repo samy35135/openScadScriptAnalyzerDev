@@ -21,7 +21,7 @@ var async = require('async');
 
 var service = require('./thingiverse.service');
 
-var devDB = 'mongodb://localhost/openscadanalyzer-dev';
+var devDB = 'mongodb://148.60.11.195:27017/openscadanalyzer-dev';
 var currentDB = devDB;
 
 var socketMsgHelper = require('./socketMsgHelper');
@@ -30,6 +30,19 @@ socketMsgHelper.register(getSocket());
 exports.list = function(tag, page, callback){
 	doSomethingInDB(currentDB, function(){
 		service.list(tag, 1, function(err, things){
+			closeDB();
+			callback(things);
+		});
+	});//doSomethingInDB
+};
+
+/* List things
+If state = 0, list parsed scad files
+Else, list failed scad files
+*/
+exports.listByState = function(nbResults, state, callback){
+	doSomethingInDB(currentDB, function(){
+		service.listByState(nbResults, state, function(err, things){
 			closeDB();
 			callback(things);
 		});
