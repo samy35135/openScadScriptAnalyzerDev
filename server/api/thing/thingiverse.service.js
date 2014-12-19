@@ -29,6 +29,8 @@ var logger = new (winston.Logger)({
     ]
   });
 
+var json2csv = require('json2csv');
+
 
 exports.setCallback = function(_callback){
 	cliCallback = _callback;
@@ -280,7 +282,7 @@ exports.listByState = function(nbResults, state, callback){
       }
     ],
     function (err, results) {
-      if (err) return cb(err);
+      if (err) return callback(err);
       var count = 0, ret = [];
 
       _.each(results, function (r) {
@@ -397,6 +399,56 @@ exports.distinctIncludedFiles = function(regExp, callback){
 			callback(null, newTarget);
 	});// find
 }
+
+
+exports.generateGlobalStatistics = function(callback) {
+	logger.info('Fichier thingiverse.service.js | fonction generateGlobalStatistics');
+
+	var pops = '_thing';
+	var filter = {'isParsed': 1};
+	filter = _.extend({}, filter);
+	var cntQry = File.find(filter);
+
+	var defaults = {skip : 0, limit : cntQry};
+	var fields = {fields : 'stat'};
+	var opts = {'limit' : cntQry};
+	opts = _.extend({}, defaults, opts, fields);
+
+
+	var qry = File.find(filter).populate(pops);
+
+	qry = qry.select(opts.fields);
+
+	qry = qry.limit(50).skip(opts.skip);
+
+	async.parallel(
+	[
+		function (callback) {
+			cntQry.count(callback);
+		},
+		function (callback) {
+			qry.exec(callback);
+		}
+	],
+	function (err, results) {
+		if (err) return callback(err);
+		var count = 0, ret = [];
+
+		_.each(results, function (r) {
+			//print(JSON.stringify(r));
+			if (typeof(r) == 'number') {
+			count = r;
+			} else if (typeof(r) != 'number') {
+			ret = r;
+			}
+		});
+		var fieldsArray = ['globalArgCnt', 'mostComplexFuncArgCnt', 'totalFuncCnt', 'mostComplexModuleArgCnt', 'totalModuleCnt']
+
+		//print(fieldsArray);
+		convertJson2Csv(ret, fieldsArray,  'test.csv');
+
+	});
+}
 //////////////////////////////////////////////////////////////////////////////////
 
 function print(msg){
@@ -407,3 +459,19 @@ function handleError(title, err){
 	console.log('!!! ' + title + ' : ' + err);
 }
 
+/**
+* exemple :
+* data: json, fields: ['car', 'price', 'color']},
+**/
+function convertJson2Csv(dataJson, fieldsArray, nameFile){
+	print(nameFile);
+	json2csv({data: dataJson, fields: fieldsArray}, function(err, csv) {
+	  if (err) console.log(err);
+	  console.log(csv);
+	  /*fs.writeFile(nameFile, csv, function(err) {
+	    if (err) throw err;
+	    console.log('file saved');
+
+	  });*/
+	});
+}

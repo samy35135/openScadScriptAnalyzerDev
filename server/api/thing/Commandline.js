@@ -49,6 +49,15 @@ exports.listByState = function(nbResults, state, callback){
 	});//doSomethingInDB
 };
 
+exports.generateGlobalStatistics = function(callback){
+	doSomethingInDB(currentDB, function(){
+		service.generateGlobalStatistics( function(err){
+			closeDB();
+			callback();
+		});
+	});//doSomethingInDB
+}
+
 exports.batch = function(tag, limitCnt, cb){
 	doSomethingInDB(currentDB, function(){
 		service.setCallback(cb);

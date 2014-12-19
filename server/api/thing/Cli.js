@@ -45,9 +45,16 @@ rl.on('line', function(line) {
 		});
       	break;
 	case 4:
-    	
+		cliSupport.generateGlobalStatistics(function(files){
+			for(index in files.results){
+				print(index + '. ' + files.results[index].name);
+			}
+			print('Total failed scad : ' + files.totalCount);
+			rl.close();
+		});
+      	break;
 	case 5:
-    	
+
 	case 6:
     	
 	case 7:
