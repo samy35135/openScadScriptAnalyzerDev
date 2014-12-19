@@ -6,7 +6,6 @@
  * PUT     /things/:id          ->  update
  * DELETE  /things/:id          ->  destroy
  */
-
 'use strict';
 
 var _ = require('lodash');
@@ -36,6 +35,7 @@ exports.checkme = function(req, res){
     return res.json(201, me);
   });
 }
+
 
 // Get list of thingiverses
 exports.batch = function(req, res) {
