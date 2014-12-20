@@ -27,6 +27,10 @@ var currentDB = devDB;
 var socketMsgHelper = require('./socketMsgHelper');
 socketMsgHelper.register(getSocket());
 
+
+require('colors')
+var jsdiff = require('diff');
+
 exports.list = function(tag, page, callback){
 	doSomethingInDB(currentDB, function(){
 		service.list(tag, 1, function(err, things){
@@ -49,9 +53,12 @@ exports.listByState = function(nbResults, state, callback){
 	});//doSomethingInDB
 };
 
-exports.generateGlobalStatistics = function(callback){
+exports.generateGlobalStatistics = function(idThing, callback){
 	doSomethingInDB(currentDB, function(){
-		service.generateGlobalStatistics( function(err){
+		service.generateGlobalStatistics(idThing, function(err){
+			if(err) {
+				console.log(err);
+			}
 			closeDB();
 			callback();
 		});
@@ -206,6 +213,56 @@ exports.extractScadFiles = function(mode, cb){
 			cb();
 		});
 	});
+};
+
+exports.testStats = function(thing, file ,callback){
+
+	var valid = true;
+
+	print('Thing Name : ' + thing.name);
+	
+	var stats = null;
+
+	//search for parsed scad file
+	for( index in thing.files){
+		if(thing.files[index].isParsed == 1){
+			stats = thing.files[index].stat;
+			break;
+		}
+	}
+
+	if(stats == null){
+		print("This thing is not parsed yet".yellow)
+	}else{
+
+		var generatedstats = stats;
+		var userStats = file.stats;
+
+		//compare objects
+		var diff = jsdiff.diffJson(generatedstats, userStats);
+
+		diff.forEach(function(part){
+		  // green for additions, red for deletions
+		  // grey for common parts
+		  var color = part.added ? 'green' :
+		    part.removed ? 'red' : 'grey';
+		  	print(part.value[color]);
+			
+			if(part.added || part.removed){
+				valid = false;
+			}
+		});
+
+		if(!valid){
+			var col = 'red';
+			print('Test failed'.red);
+		}else{
+			print('Test passed'.green);
+		}
+	
+	}
+	callback();
+
 };
 
 //////////////////////////////////////////////////////////////////////////////////////

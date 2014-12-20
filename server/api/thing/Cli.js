@@ -3,7 +3,7 @@ var requestHelper = require('./requestHelper');
 var readline = require('readline'),
     rl = readline.createInterface(process.stdin, process.stdout);
 var promptText = "Please select one\n1. Download things\n2. List parsed scad files\n3. List failed scad files\n"+
-				 "4. Generate global statistics\n5. Generate specific file statistics\n> ";
+				 "4. Generate global statistics\n5. Generate specific file statistics\n6. Test statistics\n> ";
 
 rl.setPrompt(promptText);
 rl.prompt();
@@ -26,7 +26,7 @@ rl.on('line', function(line) {
     	getParams(rl, ['results'], function(prompts, data){
 			cliSupport.listByState(data[prompts[0]], 1, function(files){
 				for(index in files.results){
-					print(index + '. ' + files.results[index].name);
+					print('#' + files.results[index].id + '\t' + files.results[index].name);
 				}
 				print('Total parsed scad : ' + files.totalCount);
 				rl.close();
@@ -37,7 +37,7 @@ rl.on('line', function(line) {
     	getParams(rl, ['results'], function(prompts, data){
 			cliSupport.listByState(data[prompts[0]], 2, function(files){
 				for(index in files.results){
-					print(index + '. ' + files.results[index].name);
+					print('#' + files.results[index].id + '\t' + files.results[index].name);
 				}
 				print('Total failed scad : ' + files.totalCount);
 				rl.close();
@@ -45,17 +45,53 @@ rl.on('line', function(line) {
 		});
       	break;
 	case 4:
-		cliSupport.generateGlobalStatistics(function(files){
-			for(index in files.results){
-				print(index + '. ' + files.results[index].name);
-			}
-			print('Total failed scad : ' + files.totalCount);
+		cliSupport.generateGlobalStatistics(0, function(files){
 			rl.close();
 		});
       	break;
 	case 5:
-
+		getParams(rl, ['IdThing'], function(prompts, data){
+			cliSupport.generateGlobalStatistics(data[prompts[0]], function(files){
+				if(files) {
+					rl.close();
+				}
+			});
+		});
+	
 	case 6:
+		var variable;
+
+		getFile(rl,function(success, data){	
+			
+			//si une erreur s'est produite
+			if(!success){
+				print("Invalid file".red);
+				rl.close();
+			}else{
+
+				//get user file
+				var file = JSON.parse(data);
+
+				//get corresponding thing
+				cliSupport.list(file.id,1, function(things){
+
+					if(things.totalCount == 0){
+						print("No thing found".red);
+						rl.close();
+					}else{						
+
+						//running test
+						cliSupport.testStats(things.results[0],file, function(){
+							rl.close();
+						});
+
+					}
+
+				});
+			}
+			
+		});
+      	break;
     	
 	case 7:
     	
@@ -184,10 +220,6 @@ function checkme(callback){
 }
 
 
-
-
-
-
 function getParams(rl, prompts, callback){
 	var p = 0,
 	data = {};
@@ -209,15 +241,34 @@ function getParams(rl, prompts, callback){
 	});
 }
 
-function print(msg){
-	console.log(msg);
+
+function getFile(rl,callback){
+	
+	var fs = require("fs");
+
+  	rl.setPrompt("Filename > ");
+  	rl.prompt();  
+
+	rl.on('line', function(line) {
+		var content = "";
+		print("Open "+'server/api/thing/test/'+	line);
+
+		fs.readFile('server/api/thing/test/'+	line, function (err, data) {
+
+		    if (err) 
+		    	return callback(false, err);
+			else 
+				return callback(true, data.toString());	
+
+		});
+
+	});
 }
 
 
-
-
-
-
+function print(msg){
+	console.log(msg);
+}
 
 
 

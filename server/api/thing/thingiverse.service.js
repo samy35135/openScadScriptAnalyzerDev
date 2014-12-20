@@ -401,55 +401,82 @@ exports.distinctIncludedFiles = function(regExp, callback){
 }
 
 
-exports.generateGlobalStatistics = function(callback) {
+exports.generateGlobalStatistics = function(idThing, callback) {
 	logger.info('Fichier thingiverse.service.js | fonction generateGlobalStatistics');
-
 	var pops = '_thing';
-	var filter = {'isParsed': 1};
+	if(idThing == 0) {
+		var filter = {'isParsed': 1};
+	} else {
+		var filter = {'isParsed': 1, 'id': idThing};
+	}
 	filter = _.extend({}, filter);
-	var cntQry = File.find(filter);
-
-	var defaults = {skip : 0, limit : cntQry};
-	var fields = {fields : 'stat'};
-	var opts = {'limit' : cntQry};
-	opts = _.extend({}, defaults, opts, fields);
-
-
+	var defaults = {skip : 0};
+	var fields = {fields : 'stat id'};
+	var opts = _.extend({}, defaults, fields);
 	var qry = File.find(filter).populate(pops);
-
 	qry = qry.select(opts.fields);
-
-	qry = qry.limit(50).skip(opts.skip);
-
+	qry = qry.skip(opts.skip);
 	async.parallel(
 	[
-		function (callback) {
-			cntQry.count(callback);
-		},
 		function (callback) {
 			qry.exec(callback);
 		}
 	],
 	function (err, results) {
 		if (err) return callback(err);
-		var count = 0, ret = [];
-
+		var count = 0;
+		var arrayForCsv = [];
 		_.each(results, function (r) {
-			//print(JSON.stringify(r));
-			if (typeof(r) == 'number') {
-			count = r;
-			} else if (typeof(r) != 'number') {
-			ret = r;
+			if (typeof(r) != 'number') {
+				//ret = array2json(r);
+				//var tpm = toObject(r);
+				
+				//print('---------------------------------------');
+				//print(r.length);
+				for(var i=0; i < r.length; i++ ){
+					/*lineForCsv['_id'] = r[i]._id;
+					lineForCsv['globalArgCnt']  = r[i].stat['globalArgCnt'];
+					lineForCsv['mostComplexFuncArgCnt'] = r[i].stat['mostComplexFuncArgCnt'];
+					lineForCsv['totalFuncCnt'] = r[i].stat['totalFuncCnt'];
+					lineForCsv['mostComplexModuleArgCnt'] = r[i].stat['mostComplexModuleArgCnt'];
+					lineForCsv['totalModuleCnt'] = r[i].stat['totalModuleCnt'];*/
+					//print(r[i].stat.length);
+					for(var j=0; j <r[i].stat.length; j++ ){
+						//print(r[i].stat[j]);
+						var lineForCsv = {};
+						if(j==0) {
+							lineForCsv['id'] = r[i].id;
+						} else {
+							lineForCsv['id'] = "";
+						}			
+						lineForCsv['globalArgCnt']  		= r[i].stat[j].globalArgCnt;
+						lineForCsv['mostComplexFuncArgCnt'] = r[i].stat[j].mostComplexFuncArgCnt;
+						lineForCsv['totalFuncCnt'] 			= r[i].stat[j].totalFuncCnt;
+						lineForCsv['mostComplexModuleArgCnt'] = r[i].stat[j].mostComplexModuleArgCnt;
+						lineForCsv['totalModuleCnt'] 		= r[i].stat[j].totalModuleCnt;
+						//print(lineForCsv);
+						arrayForCsv.push( lineForCsv);
+					}
+					
+				}
+				//print(r[0]._id);
+				//print('---------------------------------------');
+				//ret = tpm[count]['stat'];
 			}
 		});
-		var fieldsArray = ['globalArgCnt', 'mostComplexFuncArgCnt', 'totalFuncCnt', 'mostComplexModuleArgCnt', 'totalModuleCnt']
-
-		//print(fieldsArray);
-		convertJson2Csv(ret, fieldsArray,  'test.csv');
-
+	//print(arrayForCsv);
+		//print(arrayForCsv);
+		convertJson2Csv(arrayForCsv, 'test.csv');
 	});
 }
 //////////////////////////////////////////////////////////////////////////////////
+
+function toObject(arr) {
+  var rv = {};
+  for (var i = 0; i < arr.length; ++i)
+    if (arr[i] !== undefined) rv[i] = arr[i];
+  return rv;
+}
 
 function print(msg){
 	console.log(msg);
@@ -459,19 +486,19 @@ function handleError(title, err){
 	console.log('!!! ' + title + ' : ' + err);
 }
 
-/**
-* exemple :
-* data: json, fields: ['car', 'price', 'color']},
-**/
-function convertJson2Csv(dataJson, fieldsArray, nameFile){
-	print(nameFile);
-	json2csv({data: dataJson, fields: fieldsArray}, function(err, csv) {
-	  if (err) console.log(err);
-	  console.log(csv);
-	  /*fs.writeFile(nameFile, csv, function(err) {
-	    if (err) throw err;
-	    console.log('file saved');
-
-	  });*/
+function convertJson2Csv(dataJson, nameFile){
+	//print(dataJson);
+	json2csv({data: dataJson, fields: ['id', 'globalArgCnt', 'mostComplexFuncArgCnt', 'totalFuncCnt', 'mostComplexModuleArgCnt', 'totalModuleCnt']}, function(err, csv) {
+		if (err) console.log(err);
+		//console.log(csv);
+		var fs = require('fs');
+		fs.writeFile(nameFile, replaceAll("\"\"", "", csv), function(err) {
+		if (err) throw err;
+		console.log('file saved');
+		});
 	});
+}
+
+function replaceAll(find, replace, str) {
+  return str.replace(new RegExp(find, 'g'), replace);
 }
