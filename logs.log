@@ -434,3 +434,20 @@
 {"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-20T11:13:53.372Z"}
 {"level":"info","message":"Fichier thingiverse.service.js | fonction list","timestamp":"2014-12-20T11:13:55.051Z"}
 {"level":"info","message":"Fichier thingiverse.controller.js | fonction list","timestamp":"2014-12-20T11:14:14.811Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-20T14:55:16.753Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-20T14:55:16.755Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction list","timestamp":"2014-12-20T14:55:22.244Z"}
+{"level":"info","message":"application launched","timestamp":"2014-12-20T14:55:44.366Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-20T14:55:44.629Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-20T14:55:44.629Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction stat","timestamp":"2014-12-20T14:55:48.358Z"}
+{"level":"info","message":"Fichier thingiverse.controller.js | fonction stat","timestamp":"2014-12-20T14:55:48.469Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction list","timestamp":"2014-12-20T14:55:50.020Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction list","timestamp":"2014-12-20T14:55:56.733Z"}
+{"level":"info","message":"Fichier thingiverse.controller.js | fonction list","timestamp":"2014-12-20T14:55:56.861Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction list","timestamp":"2014-12-20T14:56:09.387Z"}
+{"level":"info","message":"Fichier thingiverse.controller.js | fonction list","timestamp":"2014-12-20T14:56:16.303Z"}
+{"level":"info","message":"Fichier thingiverse.controller.js | fonction list","timestamp":"2014-12-20T14:56:16.484Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-20T14:56:45.317Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-20T14:56:45.318Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction list","timestamp":"2014-12-20T14:56:50.106Z"}
