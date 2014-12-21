@@ -23,7 +23,7 @@ rl.on('line', function(line) {
 		});
 		break;
     case 2:
-    	getParams(rl, ['results'], function(prompts, data){
+    	getParams(rl, ['Limit'], function(prompts, data){
 			cliSupport.listByState(data[prompts[0]], 1, function(files){
 				for(index in files.results){
 					print('#' + files.results[index].id + '\t' + files.results[index].name);
@@ -34,7 +34,7 @@ rl.on('line', function(line) {
 		});
       	break;
     case 3:
-    	getParams(rl, ['results'], function(prompts, data){
+    	getParams(rl, ['Limit'], function(prompts, data){
 			cliSupport.listByState(data[prompts[0]], 2, function(files){
 				for(index in files.results){
 					print('#' + files.results[index].id + '\t' + files.results[index].name);
@@ -45,22 +45,26 @@ rl.on('line', function(line) {
 		});
       	break;
 	case 4:
-		cliSupport.generateGlobalStatistics(0, function(files){
+		cliSupport.generateGlobalStatistics(0, 0, function(){
 			rl.close();
 		});
       	break;
 	case 5:
 		getParams(rl, ['IdThing'], function(prompts, data){
-			cliSupport.generateGlobalStatistics(data[prompts[0]], function(files){
-				if(files) {
-					rl.close();
+			cliSupport.list(data[prompts[0]],1, function(things){
+				for(index in things.results[0].files) {
+					if(things.results[0].files[index].isParsed == 1) {
+						cliSupport.generateGlobalStatistics(things.results[0].id, things.results[0].files[index].id, function(){
+							rl.close();
+						});
+					}
 				}
+				
 			});
 		});
-	
+		break;
 	case 6:
 		var variable;
-
 		getFile(rl,function(success, data){	
 			
 			//si une erreur s'est produite
@@ -92,22 +96,13 @@ rl.on('line', function(line) {
 			
 		});
       	break;
-    	
-	case 7:
-    	
-	case 8:
-		
-	case 9:
-		
-		
 	case 10:
     		cliSupport.closeDB();
     		break;
     	default:
-     	break;
-    
+     	break; 
   }
-  rl.prompt();
+  //rl.prompt();
 }).on('close', function() {
   console.log('Have a great day!');
   process.exit(0);

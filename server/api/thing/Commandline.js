@@ -53,12 +53,9 @@ exports.listByState = function(nbResults, state, callback){
 	});//doSomethingInDB
 };
 
-exports.generateGlobalStatistics = function(idThing, callback){
+exports.generateGlobalStatistics = function(idThing, idFile, callback){
 	doSomethingInDB(currentDB, function(){
-		service.generateGlobalStatistics(idThing, function(err){
-			if(err) {
-				console.log(err);
-			}
+		service.generateGlobalStatistics(idThing, idFile, function(err){
 			closeDB();
 			callback();
 		});
@@ -268,11 +265,11 @@ exports.testStats = function(thing, file ,callback){
 //////////////////////////////////////////////////////////////////////////////////////
 function closeDB(){
 	mongoose.connection.close();
-	print('connection closed');
+	//print('connection closed');
 }
 exports.closeDB = function(){
 	mongoose.connection.close();
-	print('connection closed');
+	//print('connection closed');
 }
 function doSomethingInDB(dburi, outerCallback){
 	mongoose.connect(dburi);
@@ -281,7 +278,7 @@ function doSomethingInDB(dburi, outerCallback){
 	db.once('open', function callback () {
 		try {
 			// after doing , you should close the connection!!!!
-			console.log('connection opened')
+			//console.log('connection opened')
 			outerCallback();
 
 		}catch (e) {

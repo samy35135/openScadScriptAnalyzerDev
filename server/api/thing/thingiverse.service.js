@@ -264,11 +264,8 @@ exports.listByState = function(nbResults, state, callback){
 	}
 
 	if (opts.sort) {
-    qry = qry.sort(opts.sort);
-  }
-  if (opts.fields) {
-    qry = qry.select(opts.fields);
-  }
+		qry = qry.sort(opts.sort);
+	}
 
   qry = qry.limit(opts.limit).skip(opts.skip);
 
@@ -401,13 +398,15 @@ exports.distinctIncludedFiles = function(regExp, callback){
 }
 
 
-exports.generateGlobalStatistics = function(idThing, callback) {
+exports.generateGlobalStatistics = function(idThing, idFile, callback) {
 	logger.info('Fichier thingiverse.service.js | fonction generateGlobalStatistics');
 	var pops = '_thing';
 	if(idThing == 0) {
 		var filter = {'isParsed': 1};
+		var nameFile = 'tests/statisticsThings.csv';
 	} else {
-		var filter = {'isParsed': 1, 'id': idThing};
+		var filter = {'isParsed': 1, 'id': idFile};
+		var nameFile = 'tests/'+ idThing + '.csv';
 	}
 	filter = _.extend({}, filter);
 	var defaults = {skip : 0};
@@ -466,7 +465,10 @@ exports.generateGlobalStatistics = function(idThing, callback) {
 		});
 	//print(arrayForCsv);
 		//print(arrayForCsv);
-		convertJson2Csv(arrayForCsv, 'test.csv');
+		convertJson2Csv(arrayForCsv, nameFile, function() {
+			callback();
+		});
+		//callback();
 	});
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -486,7 +488,7 @@ function handleError(title, err){
 	console.log('!!! ' + title + ' : ' + err);
 }
 
-function convertJson2Csv(dataJson, nameFile){
+function convertJson2Csv(dataJson, nameFile, callback){
 	//print(dataJson);
 	json2csv({data: dataJson, fields: ['id', 'globalArgCnt', 'mostComplexFuncArgCnt', 'totalFuncCnt', 'mostComplexModuleArgCnt', 'totalModuleCnt']}, function(err, csv) {
 		if (err) console.log(err);
@@ -494,9 +496,11 @@ function convertJson2Csv(dataJson, nameFile){
 		var fs = require('fs');
 		fs.writeFile(nameFile, replaceAll("\"\"", "", csv), function(err) {
 		if (err) throw err;
-		console.log('file saved');
+		console.log('file ' + nameFile + ' saved');
+		callback();
 		});
 	});
+
 }
 
 function replaceAll(find, replace, str) {
