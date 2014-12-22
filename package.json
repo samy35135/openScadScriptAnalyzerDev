@@ -26,7 +26,8 @@
     "underscore": "^1.6.0",
     "json2csv":"^2.2.1",
     "winston":"latest",
-    "diff":"latest"
+    "diff":"latest",
+    "colors":"latest"
   },
   "devDependencies": {
     "grunt": "~0.4.4",
@@ -81,7 +82,7 @@
     "karma-ng-html2js-preprocessor": "~0.1.0",
     "supertest": "~0.11.0",
     "should": "~3.3.1"
-  },
+  },	
   "engines": {
     "node": ">=0.10.0"
   },
@@ -90,7 +91,7 @@
     "console": "node server/api/thing/Cli.js",
     "test": "grunt test",
     "update-webdriver": "node node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update",
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "postinstall": "bower install"
   },
   "private": true
 }
