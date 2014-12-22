@@ -849,3 +849,489 @@
 {"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-21T20:50:26.903Z"}
 {"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-21T20:50:26.905Z"}
 {"level":"info","message":"Fichier thingiverse.service.js | fonction list","timestamp":"2014-12-21T20:50:38.629Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T12:01:33.550Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T12:01:33.551Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T12:01:48.045Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T12:01:48.046Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T12:02:19.675Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T12:02:19.704Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-22T12:02:24.708Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer.parse","timestamp":"2014-12-22T12:02:24.902Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- beginning","timestamp":"2014-12-22T12:02:24.708Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- Preparse - file.content","timestamp":"2014-12-22T12:02:24.710Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction mergeFiles","timestamp":"2014-12-22T12:02:24.710Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- parser.parse","timestamp":"2014-12-22T12:02:24.711Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- init parser ","timestamp":"2014-12-22T12:02:24.851Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- context contains :  [object Object]","timestamp":"2014-12-22T12:02:24.851Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- File parsed","timestamp":"2014-12-22T12:02:24.900Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:02:24.900Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:02:24.900Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:02:24.900Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt3 \n ","timestamp":"2014-12-22T12:02:24.900Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:02:24.900Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:02:24.900Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:02:24.900Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:02:24.900Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt1 \n ","timestamp":"2014-12-22T12:02:24.900Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:02:24.900Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:02:24.901Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:02:24.901Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:02:24.901Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt0 \n ","timestamp":"2014-12-22T12:02:24.901Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:02:24.901Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:02:24.901Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:02:24.901Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:02:24.901Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 16 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt7 \n ","timestamp":"2014-12-22T12:02:24.901Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:02:24.901Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:02:24.901Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  end calblback null","timestamp":"2014-12-22T12:02:24.902Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- analyseAllContext","timestamp":"2014-12-22T12:02:24.902Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-22T12:02:29.906Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- beginning","timestamp":"2014-12-22T12:02:29.907Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer.parse","timestamp":"2014-12-22T12:02:29.916Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- Preparse - file.content","timestamp":"2014-12-22T12:02:29.907Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction mergeFiles","timestamp":"2014-12-22T12:02:29.907Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- parser.parse","timestamp":"2014-12-22T12:02:29.908Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- init parser ","timestamp":"2014-12-22T12:02:29.915Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- context contains :  [object Object]","timestamp":"2014-12-22T12:02:29.915Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- File parsed","timestamp":"2014-12-22T12:02:29.915Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:02:29.915Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:02:29.915Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:02:29.915Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt3 \n ","timestamp":"2014-12-22T12:02:29.915Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:02:29.915Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:02:29.915Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:02:29.916Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:02:29.916Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt1 \n ","timestamp":"2014-12-22T12:02:29.916Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:02:29.916Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:02:29.916Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:02:29.916Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:02:29.916Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt1 \n ","timestamp":"2014-12-22T12:02:29.916Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:02:29.916Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:02:29.916Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:02:29.916Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:02:29.916Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt5 \n ","timestamp":"2014-12-22T12:02:29.916Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:02:29.916Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:02:29.916Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  end calblback null","timestamp":"2014-12-22T12:02:29.916Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- analyseAllContext","timestamp":"2014-12-22T12:02:29.916Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-22T12:02:34.918Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- beginning","timestamp":"2014-12-22T12:02:34.919Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer.parse","timestamp":"2014-12-22T12:02:34.922Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- Preparse - file.content","timestamp":"2014-12-22T12:02:34.919Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction mergeFiles","timestamp":"2014-12-22T12:02:34.919Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- parser.parse","timestamp":"2014-12-22T12:02:34.920Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- Parse failed","timestamp":"2014-12-22T12:02:34.922Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-22T12:02:39.926Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- beginning","timestamp":"2014-12-22T12:02:39.926Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer.parse","timestamp":"2014-12-22T12:02:40.075Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- Preparse - file.content","timestamp":"2014-12-22T12:02:39.926Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction mergeFiles","timestamp":"2014-12-22T12:02:39.926Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction getLibFile","timestamp":"2014-12-22T12:02:39.927Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- parser.parse","timestamp":"2014-12-22T12:02:39.986Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- init parser ","timestamp":"2014-12-22T12:02:39.990Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- context contains :  [object Object]","timestamp":"2014-12-22T12:02:39.990Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- File parsed","timestamp":"2014-12-22T12:02:40.075Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:02:40.075Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:02:40.075Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:02:40.075Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt1 \n ","timestamp":"2014-12-22T12:02:40.075Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:02:40.075Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:02:40.075Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:02:40.075Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:02:40.075Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt0 \n ","timestamp":"2014-12-22T12:02:40.075Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:02:40.075Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:02:40.075Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:02:40.075Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:02:40.075Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 7 \n mostComplexModuleArgCnt6 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt23 \n ","timestamp":"2014-12-22T12:02:40.075Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:02:40.075Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:02:40.075Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  end calblback null","timestamp":"2014-12-22T12:02:40.075Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- analyseAllContext","timestamp":"2014-12-22T12:02:40.075Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-22T12:02:45.078Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- beginning","timestamp":"2014-12-22T12:02:45.078Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer.parse","timestamp":"2014-12-22T12:02:45.123Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- Preparse - file.content","timestamp":"2014-12-22T12:02:45.079Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction mergeFiles","timestamp":"2014-12-22T12:02:45.079Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- parser.parse","timestamp":"2014-12-22T12:02:45.080Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- init parser ","timestamp":"2014-12-22T12:02:45.108Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- context contains :  [object Object]","timestamp":"2014-12-22T12:02:45.108Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- File parsed","timestamp":"2014-12-22T12:02:45.120Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:02:45.120Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:02:45.120Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:02:45.120Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt3 \n ","timestamp":"2014-12-22T12:02:45.120Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:02:45.120Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:02:45.120Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:02:45.120Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:02:45.120Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt1 \n ","timestamp":"2014-12-22T12:02:45.120Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:02:45.121Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:02:45.121Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:02:45.121Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:02:45.121Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt1 \n ","timestamp":"2014-12-22T12:02:45.121Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:02:45.121Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:02:45.121Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:02:45.121Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:02:45.121Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt0 \n ","timestamp":"2014-12-22T12:02:45.121Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:02:45.121Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:02:45.122Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:02:45.123Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:02:45.123Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 6 \n mostComplexModuleArgCnt5 \n totalFuncCnt1 \n mostComplexFuncArgCnt2 \n globalArgCnt20 \n ","timestamp":"2014-12-22T12:02:45.123Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:02:45.123Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:02:45.123Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  end calblback null","timestamp":"2014-12-22T12:02:45.123Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- analyseAllContext","timestamp":"2014-12-22T12:02:45.123Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-22T12:02:50.125Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- beginning","timestamp":"2014-12-22T12:02:50.126Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer.parse","timestamp":"2014-12-22T12:02:50.147Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- Preparse - file.content","timestamp":"2014-12-22T12:02:50.126Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction mergeFiles","timestamp":"2014-12-22T12:02:50.126Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- parser.parse","timestamp":"2014-12-22T12:02:50.126Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- init parser ","timestamp":"2014-12-22T12:02:50.145Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- context contains :  [object Object]","timestamp":"2014-12-22T12:02:50.145Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- File parsed","timestamp":"2014-12-22T12:02:50.147Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:02:50.147Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:02:50.147Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:02:50.147Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt1 \n ","timestamp":"2014-12-22T12:02:50.147Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:02:50.147Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:02:50.147Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:02:50.147Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:02:50.147Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 2 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt4 \n ","timestamp":"2014-12-22T12:02:50.147Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:02:50.147Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:02:50.147Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  end calblback null","timestamp":"2014-12-22T12:02:50.147Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- analyseAllContext","timestamp":"2014-12-22T12:02:50.147Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-22T12:02:55.150Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- beginning","timestamp":"2014-12-22T12:02:55.150Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer.parse","timestamp":"2014-12-22T12:02:55.279Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- Preparse - file.content","timestamp":"2014-12-22T12:02:55.150Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction mergeFiles","timestamp":"2014-12-22T12:02:55.151Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction getLibFile","timestamp":"2014-12-22T12:02:55.151Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction getLibFile","timestamp":"2014-12-22T12:02:55.215Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- parser.parse","timestamp":"2014-12-22T12:02:55.261Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- Parse failed","timestamp":"2014-12-22T12:02:55.279Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-22T12:03:00.282Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- beginning","timestamp":"2014-12-22T12:03:00.283Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer.parse","timestamp":"2014-12-22T12:03:00.311Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- Preparse - file.content","timestamp":"2014-12-22T12:03:00.283Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction mergeFiles","timestamp":"2014-12-22T12:03:00.283Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction getLibFile","timestamp":"2014-12-22T12:03:00.283Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- Parse failed","timestamp":"2014-12-22T12:03:00.311Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-22T12:03:05.314Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- beginning","timestamp":"2014-12-22T12:03:05.321Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer.parse","timestamp":"2014-12-22T12:03:05.323Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- Preparse - file.content","timestamp":"2014-12-22T12:03:05.321Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction mergeFiles","timestamp":"2014-12-22T12:03:05.321Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- parser.parse","timestamp":"2014-12-22T12:03:05.322Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- Parse failed","timestamp":"2014-12-22T12:03:05.323Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-22T12:03:10.326Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- beginning","timestamp":"2014-12-22T12:03:10.326Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer.parse","timestamp":"2014-12-22T12:03:10.351Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- Preparse - file.content","timestamp":"2014-12-22T12:03:10.326Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction mergeFiles","timestamp":"2014-12-22T12:03:10.327Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- parser.parse","timestamp":"2014-12-22T12:03:10.327Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- Parse failed","timestamp":"2014-12-22T12:03:10.351Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-22T12:03:15.352Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- beginning","timestamp":"2014-12-22T12:03:15.353Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer.parse","timestamp":"2014-12-22T12:03:15.384Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- Preparse - file.content","timestamp":"2014-12-22T12:03:15.353Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction mergeFiles","timestamp":"2014-12-22T12:03:15.353Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- parser.parse","timestamp":"2014-12-22T12:03:15.354Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- Parse failed","timestamp":"2014-12-22T12:03:15.384Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-22T12:03:20.386Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- beginning","timestamp":"2014-12-22T12:03:20.387Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer.parse","timestamp":"2014-12-22T12:03:20.410Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- Preparse - file.content","timestamp":"2014-12-22T12:03:20.387Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction mergeFiles","timestamp":"2014-12-22T12:03:20.387Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- parser.parse","timestamp":"2014-12-22T12:03:20.388Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- Parse failed","timestamp":"2014-12-22T12:03:20.410Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-22T12:03:25.412Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- beginning","timestamp":"2014-12-22T12:03:25.412Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer.parse","timestamp":"2014-12-22T12:03:25.427Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- Preparse - file.content","timestamp":"2014-12-22T12:03:25.412Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction mergeFiles","timestamp":"2014-12-22T12:03:25.413Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- parser.parse","timestamp":"2014-12-22T12:03:25.413Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- Parse failed","timestamp":"2014-12-22T12:03:25.427Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-22T12:03:30.429Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- beginning","timestamp":"2014-12-22T12:03:30.430Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer.parse","timestamp":"2014-12-22T12:03:30.459Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- Preparse - file.content","timestamp":"2014-12-22T12:03:30.430Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction mergeFiles","timestamp":"2014-12-22T12:03:30.430Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- parser.parse","timestamp":"2014-12-22T12:03:30.431Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- Parse failed","timestamp":"2014-12-22T12:03:30.459Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-22T12:03:35.462Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- beginning","timestamp":"2014-12-22T12:03:35.462Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer.parse","timestamp":"2014-12-22T12:03:35.506Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- Preparse - file.content","timestamp":"2014-12-22T12:03:35.463Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction mergeFiles","timestamp":"2014-12-22T12:03:35.463Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- parser.parse","timestamp":"2014-12-22T12:03:35.464Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- Parse failed","timestamp":"2014-12-22T12:03:35.506Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-22T12:03:40.509Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- beginning","timestamp":"2014-12-22T12:03:40.509Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer.parse","timestamp":"2014-12-22T12:03:40.525Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- Preparse - file.content","timestamp":"2014-12-22T12:03:40.509Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction mergeFiles","timestamp":"2014-12-22T12:03:40.510Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- parser.parse","timestamp":"2014-12-22T12:03:40.510Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- Parse failed","timestamp":"2014-12-22T12:03:40.525Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T12:03:49.767Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T12:03:49.768Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T12:04:25.182Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T12:04:25.211Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-22T12:04:30.212Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer.parse","timestamp":"2014-12-22T12:04:30.279Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- beginning","timestamp":"2014-12-22T12:04:30.214Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- Preparse - file.content","timestamp":"2014-12-22T12:04:30.218Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction mergeFiles","timestamp":"2014-12-22T12:04:30.219Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- parser.parse","timestamp":"2014-12-22T12:04:30.220Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- init parser ","timestamp":"2014-12-22T12:04:30.267Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- context contains :  [object Object]","timestamp":"2014-12-22T12:04:30.267Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- File parsed","timestamp":"2014-12-22T12:04:30.277Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:04:30.277Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:04:30.277Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:04:30.277Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt3 \n ","timestamp":"2014-12-22T12:04:30.277Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:04:30.277Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:04:30.278Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:04:30.278Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:04:30.278Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt1 \n ","timestamp":"2014-12-22T12:04:30.278Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:04:30.278Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:04:30.278Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:04:30.278Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:04:30.278Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt1 \n ","timestamp":"2014-12-22T12:04:30.278Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:04:30.278Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:04:30.278Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:04:30.278Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:04:30.278Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt0 \n ","timestamp":"2014-12-22T12:04:30.278Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:04:30.278Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:04:30.278Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:04:30.279Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:04:30.279Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 3 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt11 \n ","timestamp":"2014-12-22T12:04:30.279Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:04:30.279Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:04:30.279Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  end calblback null","timestamp":"2014-12-22T12:04:30.279Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- analyseAllContext","timestamp":"2014-12-22T12:04:30.279Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-22T12:04:35.282Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- beginning","timestamp":"2014-12-22T12:04:35.283Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- Preparse - file.content","timestamp":"2014-12-22T12:04:35.283Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer.parse","timestamp":"2014-12-22T12:04:35.339Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction mergeFiles","timestamp":"2014-12-22T12:04:35.284Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- parser.parse","timestamp":"2014-12-22T12:04:35.284Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- init parser ","timestamp":"2014-12-22T12:04:35.335Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- context contains :  [object Object]","timestamp":"2014-12-22T12:04:35.335Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- File parsed","timestamp":"2014-12-22T12:04:35.337Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:04:35.337Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:04:35.337Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:04:35.337Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt2 \n ","timestamp":"2014-12-22T12:04:35.337Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:04:35.337Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:04:35.337Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt1 \n ","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt1 \n ","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt1 \n ","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt1 \n ","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt0 \n ","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 1 \n mostComplexModuleArgCnt3 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt10 \n ","timestamp":"2014-12-22T12:04:35.338Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:04:35.339Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:04:35.339Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  end calblback null","timestamp":"2014-12-22T12:04:35.339Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- analyseAllContext","timestamp":"2014-12-22T12:04:35.339Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction parse","timestamp":"2014-12-22T12:04:40.341Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- beginning","timestamp":"2014-12-22T12:04:40.341Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction scadAnalyzer.parse","timestamp":"2014-12-22T12:04:40.366Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- Preparse - file.content","timestamp":"2014-12-22T12:04:40.342Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction mergeFiles","timestamp":"2014-12-22T12:04:40.342Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- parser.parse","timestamp":"2014-12-22T12:04:40.342Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- init parser ","timestamp":"2014-12-22T12:04:40.361Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse --- context contains :  [object Object]","timestamp":"2014-12-22T12:04:40.361Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- File parsed","timestamp":"2014-12-22T12:04:40.362Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:04:40.362Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:04:40.362Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:04:40.362Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt1 \n ","timestamp":"2014-12-22T12:04:40.362Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:04:40.362Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:04:40.362Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:04:40.362Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:04:40.362Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt1 \n ","timestamp":"2014-12-22T12:04:40.362Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:04:40.362Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:04:40.362Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:04:40.362Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:04:40.362Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt1 \n ","timestamp":"2014-12-22T12:04:40.362Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:04:40.362Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:04:40.362Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:04:40.362Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:04:40.362Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt1 \n ","timestamp":"2014-12-22T12:04:40.362Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:04:40.362Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:04:40.362Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:04:40.362Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:04:40.362Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt1 \n ","timestamp":"2014-12-22T12:04:40.362Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:04:40.363Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:04:40.363Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:04:40.363Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:04:40.363Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt1 \n ","timestamp":"2014-12-22T12:04:40.363Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:04:40.363Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:04:40.363Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:04:40.363Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:04:40.363Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt1 \n ","timestamp":"2014-12-22T12:04:40.364Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:04:40.364Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:04:40.364Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  call analyseContext","timestamp":"2014-12-22T12:04:40.365Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   beginning","timestamp":"2014-12-22T12:04:40.365Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   totalModuleCnt 0 \n mostComplexModuleArgCnt0 \n totalFuncCnt0 \n mostComplexFuncArgCnt0 \n globalArgCnt10 \n ","timestamp":"2014-12-22T12:04:40.365Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseContext  ---   end with result","timestamp":"2014-12-22T12:04:40.366Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  --- Beginning","timestamp":"2014-12-22T12:04:40.366Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction analyseAllContext  ---  end calblback null","timestamp":"2014-12-22T12:04:40.366Z"}
+{"level":"info","message":"Fichier openScadAnalyzer.js | fonction parse  --- analyseAllContext","timestamp":"2014-12-22T12:04:40.366Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T12:10:43.671Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T12:10:43.672Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T12:11:31.147Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T12:11:31.148Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T12:11:58.935Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T12:11:58.936Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T12:12:15.784Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T12:12:15.786Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T12:12:26.686Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T12:12:26.687Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction list","timestamp":"2014-12-22T12:12:37.337Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T12:12:59.067Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T12:12:59.069Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T12:13:12.198Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T12:13:12.199Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T12:13:36.720Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T12:13:36.722Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T12:13:59.598Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T12:13:59.600Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T12:14:51.162Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T12:14:51.163Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T12:24:52.804Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T12:24:52.806Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T12:33:14.485Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T12:33:14.487Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction batch ","timestamp":"2014-12-22T13:29:09.910Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction batch - getTotalCntOfThings","timestamp":"2014-12-22T13:29:12.294Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction createThings(dataBag){","timestamp":"2014-12-22T13:29:14.910Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction createOneThing(dataBag){","timestamp":"2014-12-22T13:29:14.913Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction downloadScadFiles","timestamp":"2014-12-22T13:29:16.907Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction createOneThing(dataBag){","timestamp":"2014-12-22T13:29:22.911Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction downloadScadFiles","timestamp":"2014-12-22T13:29:25.534Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction createOneThing(dataBag){","timestamp":"2014-12-22T13:29:30.915Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction downloadScadFiles","timestamp":"2014-12-22T13:29:32.508Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T13:42:43.000Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T13:42:43.001Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction listByState","timestamp":"2014-12-22T13:42:47.914Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T13:45:20.499Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T13:45:20.500Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction listByState","timestamp":"2014-12-22T13:45:24.142Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T13:46:16.643Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T13:46:16.644Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction listByState","timestamp":"2014-12-22T13:46:19.740Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T13:46:34.360Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T13:46:34.362Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction listByState","timestamp":"2014-12-22T13:46:36.694Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T13:46:46.001Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T13:46:46.002Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction listByState","timestamp":"2014-12-22T13:46:49.811Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T13:47:18.634Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T13:47:18.635Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction listByState","timestamp":"2014-12-22T13:47:20.795Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T13:48:32.715Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T13:48:32.716Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction listByState","timestamp":"2014-12-22T13:48:35.015Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T13:48:52.542Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T13:48:52.544Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction listByState","timestamp":"2014-12-22T13:48:54.875Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T13:50:00.251Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T13:50:00.253Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction listByState","timestamp":"2014-12-22T13:50:07.042Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T13:50:51.799Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T13:50:51.801Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction listByState","timestamp":"2014-12-22T13:50:54.695Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T13:52:50.571Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T13:52:50.573Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction listByState","timestamp":"2014-12-22T13:52:52.818Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T13:53:58.657Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T13:53:58.659Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction listByState","timestamp":"2014-12-22T13:53:59.723Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T13:54:06.166Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T13:54:06.167Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T13:55:20.141Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T13:55:20.142Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T13:55:31.136Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T13:55:31.137Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T13:57:14.227Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T13:57:14.229Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction listByState","timestamp":"2014-12-22T13:57:17.521Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T14:00:11.835Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T14:00:11.836Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T14:00:39.281Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T14:00:39.283Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T14:00:55.446Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T14:00:55.448Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T14:01:09.638Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T14:01:09.640Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction listByState","timestamp":"2014-12-22T14:01:12.540Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T14:01:25.738Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T14:01:25.739Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction batch ","timestamp":"2014-12-22T14:01:46.645Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction batch - getTotalCntOfThings","timestamp":"2014-12-22T14:01:48.637Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction createThings(dataBag){","timestamp":"2014-12-22T14:02:18.255Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction createOneThing(dataBag){","timestamp":"2014-12-22T14:02:18.256Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction downloadScadFiles","timestamp":"2014-12-22T14:02:21.650Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction createOneThing(dataBag){","timestamp":"2014-12-22T14:02:26.255Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction downloadScadFiles","timestamp":"2014-12-22T14:02:29.172Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction createOneThing(dataBag){","timestamp":"2014-12-22T14:02:34.257Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction downloadScadFiles","timestamp":"2014-12-22T14:02:39.736Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T14:04:11.511Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T14:04:11.513Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T14:04:30.343Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T14:04:30.345Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction newParsingHelper","timestamp":"2014-12-22T14:04:51.686Z"}
+{"level":"info","message":"Fichier ParsingHelper.js | fonction startParsing","timestamp":"2014-12-22T14:04:51.687Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction batch ","timestamp":"2014-12-22T14:05:05.794Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction batch - getTotalCntOfThings","timestamp":"2014-12-22T14:05:07.668Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction createThings(dataBag){","timestamp":"2014-12-22T14:05:12.392Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction createOneThing(dataBag){","timestamp":"2014-12-22T14:05:12.394Z"}
+{"level":"info","message":"Fichier thingiverse.service.js | fonction downloadScadFiles","timestamp":"2014-12-22T14:05:14.256Z"}

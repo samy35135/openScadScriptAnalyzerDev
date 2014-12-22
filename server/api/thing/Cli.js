@@ -1,56 +1,91 @@
 var cliSupport = require('./Commandline');
 var requestHelper = require('./requestHelper');
 var readline = require('readline'),
-    rl = readline.createInterface(process.stdin, process.stdout);
-var promptText = "Please select one\n1. Download things\n2. List parsed scad files\n3. List failed scad files\n"+
-				 "4. Generate global statistics\n5. Generate specific file statistics\n6. Test statistics\n> ";
+    rl = readline.createInterface(process.stdin, process.stdout),
+    r2;
+
+var promptText = "Please select one\n"+
+				"   1. Download things\n"+
+				"   2. List parsed scad files\n"+
+				"   3. List failed scad files\n"+
+				"   4. List by tag\n"+
+				"   5. Generate global statistics\n"+
+				"   6. Generate specific file statistics\n"+
+				"   7. Parse scad files\n"+
+				"   8. Parse failed files\n"+
+				"   9. Parse one scad file\n"+
+				"  10. Test statistics\n\n";
 
 rl.setPrompt(promptText);
 rl.prompt();
+rl.setPrompt("> ");
+rl.prompt();
 
 rl.on('line', function(line) {
+	rl.close();
+	r2 = readline.createInterface(process.stdin, process.stdout);
+	r2.on('close', function() {
+		console.log('Have a great day!');
+		process.exit(0);
+	});
     switch(parseInt(line)) {
+    case 0:
+    	cliSupport.closeDB();
+    break;
+   	// Download things from Thingiverse
+   	// Need an access token
     case 1:
     	// Ask for access token
 		checkme(function(){
-			// Ask for limit size
-			getParams(rl, ['Tag','Limit'], function(prompts, data){
+			// Ask for limit size and tag
+			getParams(r2, ['Tag','Limit'], function(prompts, data){
 				cliSupport.batch(data[prompts[0]], data[prompts[1]], function(){
 					cliSupport.closeDB();
-					rl.close();
+					r2.close();
 				});
 			});
 		});
 		break;
     case 2:
-    	getParams(rl, ['Limit'], function(prompts, data){
+    	getParams(r2, ['Limit'], function(prompts, data){
 			cliSupport.listByState(data[prompts[0]], 1, function(files){
 				for(index in files.results){
 					print('#' + files.results[index].id + '\t' + files.results[index].name);
 				}
 				print('Total parsed scad : ' + files.totalCount);
-				rl.close();
+				r2.close();
 			});
 		});
       	break;
     case 3:
-    	getParams(rl, ['Limit'], function(prompts, data){
+    	getParams(r2, ['Limit'], function(prompts, data){
 			cliSupport.listByState(data[prompts[0]], 2, function(files){
 				for(index in files.results){
 					print('#' + files.results[index].id + '\t' + files.results[index].name);
 				}
 				print('Total failed scad : ' + files.totalCount);
-				rl.close();
+				r2.close();
 			});
 		});
       	break;
-	case 4:
-		cliSupport.generateGlobalStatistics(0, 0, function(){
-			rl.close();
+    case 4:
+		getParams(r2, ['Tag','Page'], function(prompts, data){
+			cliSupport.list(data[prompts[0]], data[prompts[1]], function(things){
+				for(index in things.results){
+					print('thing : ' + things.results[index].name);
+				}
+				print('totalCount : ' + things.totalCount);
+				r2.close();
+			});
 		});
       	break;
 	case 5:
-		getParams(rl, ['IdThing'], function(prompts, data){
+		cliSupport.generateGlobalStatistics(0, 0, function(){
+			r2.close();
+		});
+      	break;
+	case 6:
+		getParams(r2, ['IdThing'], function(prompts, data){
 			cliSupport.list(data[prompts[0]],1, function(things){
 				for(index in things.results[0].files) {
 					if(things.results[0].files[index].isParsed == 1) {
@@ -63,14 +98,33 @@ rl.on('line', function(line) {
 			});
 		});
 		break;
-	case 6:
+	case 7:
+    	cliSupport.parseNotParsedFiles(-1, function(){
+    		cliSupport.closeDB();
+    		r2.close();
+    	});
+		break;
+	case 8:
+    	cliSupport.parseNotParsedFiles(0, function(){
+    		cliSupport.closeDB();
+    		r2.close();
+    	});
+		break;
+	case 9:
+		r2.question('target _id?', function(_id) {
+	    	cliSupport.parseOneScad(_id, function(){
+	    		r2.close();
+	    	});
+		});
+		break;
+	case 10:
 		var variable;
-		getFile(rl,function(success, data){	
+		getFile(r2,function(success, data){	
 			
 			//si une erreur s'est produite
 			if(!success){
 				print("Invalid file".red);
-				rl.close();
+				r2.close();
 			}else{
 
 				//get user file
@@ -81,12 +135,12 @@ rl.on('line', function(line) {
 
 					if(things.totalCount == 0){
 						print("No thing found".red);
-						rl.close();
+						r2.close();
 					}else{						
 
 						//running test
 						cliSupport.testStats(things.results[0],file, function(){
-							rl.close();
+							r2.close();
 						});
 
 					}
@@ -96,17 +150,15 @@ rl.on('line', function(line) {
 			
 		});
       	break;
-	case 10:
-    		cliSupport.closeDB();
-    		break;
-    	default:
+    default:
      	break; 
   }
   //rl.prompt();
 }).on('close', function() {
-  console.log('Have a great day!');
-  process.exit(0);
+  //console.log('Have a great day!');
+  //process.exit(0);
 });
+
 
 /*
 
@@ -201,7 +253,7 @@ rl.on('line', function(line) {
 });*/
 
 function checkme(callback){
-	rl.question('Access Token > ', function(token) {
+	r2.question('Access Token > ', function(token) {
 		requestHelper.checkme(token, function(err, me){
 			if(err) {
 				checkme(callback);
@@ -215,16 +267,16 @@ function checkme(callback){
 }
 
 
-function getParams(rl, prompts, callback){
+function getParams(r2, prompts, callback){
 	var p = 0,
 	data = {};
 	var get = function() {
-		  	rl.setPrompt(prompts[p] + '> ');
-		  	rl.prompt();  
+		  	r2.setPrompt(prompts[p] + '> ');
+		  	r2.prompt();  
 			p++
 		};
 	get();
-	rl.on('line', function(line) {
+	r2.on('line', function(line) {
 
 	  	data[prompts[p - 1]] = line;
 	  	//print(data[prompts[p - 1]]);
@@ -236,15 +288,13 @@ function getParams(rl, prompts, callback){
 	});
 }
 
-
-function getFile(rl,callback){
+function getFile(r2,callback){
 	
 	var fs = require("fs");
+  	r2.setPrompt("Filename > ");
+  	r2.prompt();  
 
-  	rl.setPrompt("Filename > ");
-  	rl.prompt();  
-
-	rl.on('line', function(line) {
+	r2.on('line2', function(line) {
 		var content = "";
 		print("Open "+'server/api/thing/test/'+	line);
 
