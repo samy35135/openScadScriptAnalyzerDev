@@ -82,6 +82,7 @@ exports.statistics = function(cb){
 };
 
 exports.parseNotParsedFiles = function(mode, cb){
+	
 	doSomethingInDB(currentDB, function(){
 		File
 		.find({name:/scad/, isParsed : mode, size : {$lt:10000}})

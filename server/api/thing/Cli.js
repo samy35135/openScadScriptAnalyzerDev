@@ -4,7 +4,7 @@ var readline = require('readline'),
     rl = readline.createInterface(process.stdin, process.stdout),
     r2;
 
-var promptText = "Please select one\n"+
+/*var promptText = "Please select one\n"+
 				"   1. Download things\n"+
 				"   2. List parsed scad files\n"+
 				"   3. List failed scad files\n"+
@@ -19,8 +19,21 @@ var promptText = "Please select one\n"+
 rl.setPrompt(promptText);
 rl.prompt();
 rl.setPrompt("> ");
-rl.prompt();
+rl.prompt();*/
 
+rl.write("Please select one\n"+
+				"   1. Download things\n"+
+				"   2. List parsed scad files\n"+
+				"   3. List failed scad files\n"+
+				"   4. List by tag\n"+
+				"   5. Generate global statistics\n"+
+				"   6. Generate specific file statistics\n"+
+				"   7. Parse scad files\n"+
+				"   8. Parse failed files\n"+
+				"   9. Parse one scad file\n"+
+				"  10. Test statistics\n");
+rl.setPrompt("> ");
+rl.prompt();
 rl.on('line', function(line) {
 	rl.close();
 	r2 = readline.createInterface(process.stdin, process.stdout);
@@ -90,7 +103,7 @@ rl.on('line', function(line) {
 				for(index in things.results[0].files) {
 					if(things.results[0].files[index].isParsed == 1) {
 						cliSupport.generateGlobalStatistics(things.results[0].id, things.results[0].files[index].id, function(){
-							rl.close();
+							r2.close();
 						});
 					}
 				}
@@ -294,7 +307,7 @@ function getFile(r2,callback){
   	r2.setPrompt("Filename > ");
   	r2.prompt();  
 
-	r2.on('line2', function(line) {
+	r2.on('line', function(line) {
 		var content = "";
 		print("Open "+'server/api/thing/test/'+	line);
 
