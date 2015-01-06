@@ -65,35 +65,126 @@ exports.list = function(req, res){
 
       console.log("Generate parameters for " + things.results[0].name + " :");
 
-      //load the thing .scad content
-      var textFile = things.results[0].files[0].content;
+       //load the thing .scad content
+
+      var textFile = "";
+      
+      for (var i = 0; i < things.results[0].files.length; i++) {
+        //is a .scad file
+        if(things.results[0].files[i].name.indexOf(".scad") != -1){
+            console.log("Scad file found : " + things.results[0].files[i].name);
+            textFile = things.results[0].files[i].content;
+        }
+      };
 
       //array that contains all the sliders
       thingParams.sliders = [];
+      thingParams.dropdown = [];
+      thingParams.imageToSurface = [];
+      thingParams.imageToArray = [];
+      thingParams.polygons = [];
 
       //regexp
-      var re = /(\w*)\s*=\s*\d*;\s*\/\/\s*\[(\d*):(\d*)\]/g; 
+      var sliders = /(\w*)\s*=\s*(\d)*;\s*\/\/\s*\[(\d*):(\d*)\]/g; 
+      var dropdown = /(\w*)\s*=\s*(\d)*;\s*\/\/\s*\[([\d*|\s|,]*)\]/g;
+      var imgToSurface = /(.*)\s*=\s*\"+(.*)\"+;\s*\/\/\s*\[image_surface:(\d*)x(\d*)]/g; 
+      var imgToArray = /(.*)\s*=\s*(\[.*\]);\s*\/\/\s*\[image_array:(\d*)x(\d*)]/g; 
+      var polygons = /(\w*)\s*=\s*\[\s*(\[.*]\s*]\s*),\[\s*(\[.*]\s*)\s*]\s*];\s*\/\/\s*\[draw_polygon:(\d*)x(\d*)\]/g;
 
       var m;
       var i = 0;
 
-      while ((m = re.exec(textFile)) != null) {
+      while ((m = sliders.exec(textFile)) != null) {
+          if (m.index === sliders.lastIndex) {
+              sliders.lastIndex++;
+          }
+          if(m.index){
+            thingParams.sliders[i] = { name : m[1], min : m[2], def : m[3], max : m[4]};
+            i++;
+          }
+      }
 
-          if (m.index === re.lastIndex) {
+      i = 0;
 
-              re.lastIndex++;
+      while ((m = dropdown.exec(textFile)) != null) {
+          if (m.index === dropdown.lastIndex) {
+              dropdown.lastIndex++;
+          }
+          if(m.index){
+            thingParams.dropdown[i] = { name : m[1], def : m[2], values : JSON.stringify(m[3].split(","))};
+            i++;
+          }
+      }
+
+      i = 0;
+
+       while ((m = imgToSurface.exec(textFile)) != null) {
+
+          if (m.index === imgToSurface.lastIndex) {
+
+              imgToSurface.lastIndex++;
           }
 
           if(m.index){
-            thingParams.sliders[i] = { name : m[1], min : m[2], max : m[3]};
+            thingParams.imageToSurface[i] = { 
+              name : m[1], 
+              file : m[2], 
+              width : m[3],
+              height : m[4]
+            };
             i++;
           }
           
       }
 
+      i = 0;
+
+      while ((m = imgToArray.exec(textFile)) != null) {
+
+          if (m.index === imgToArray.lastIndex) {
+
+              imgToArray.lastIndex++;
+          }
+
+          if(m.index){
+            thingParams.imageToArray[i] = { 
+              name : m[1], 
+              points : JSON.stringify(m[2].split(",")), 
+              paths : m[3],
+              cols : m[4]
+            };
+            i++;
+          }
+      }
+
+      i = 0;
+
+      while ((m = polygons.exec(textFile)) != null) {
+
+          if (m.index === polygons.lastIndex) {
+
+              polygons.lastIndex++;
+          }
+
+          if(m.index){
+            thingParams.imageToArray[i] = { 
+              name : m[1], 
+              array : m[2], 
+              rows : m[3],
+              width : m[4],
+              height : m[5]
+            };
+            i++;
+          }
+      }
+
+
+
       //display result
       console.log(thingParams);
     }
+
+    
     
 
     if(err) { return handleError(res, err); }
