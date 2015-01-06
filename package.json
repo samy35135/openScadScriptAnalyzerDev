@@ -27,7 +27,8 @@
     "json2csv":"^2.2.1",
     "winston":"latest",
     "diff":"latest",
-    "colors":"latest"
+    "colors":"latest",
+    "node-regexp":"latest"
   },
   "devDependencies": {
     "grunt": "~0.4.4",
