@@ -55,9 +55,50 @@ exports.batch = function(req, res) {
 exports.list = function(req, res){
   thingiverseService.list(req.params.tag, req.params.page, function(err, things){
     logger.info('Fichier thingiverse.controller.js | fonction list');
+
+    if(things.results.length > 1)
+      console.log("Too many things can't show all parameters");
+    else{
+      
+      //contains all parameters in an object
+      var thingParams = {};
+
+      console.log("Generate parameters for " + things.results[0].name + " :");
+
+      //load the thing .scad content
+      var textFile = things.results[0].files[0].content;
+
+      //array that contains all the sliders
+      thingParams.sliders = [];
+
+      //regexp
+      var re = /(\w*)\s*=\s*\d*;\s*\/\/\s*\[(\d*):(\d*)\]/g; 
+
+      var m;
+      var i = 0;
+
+      while ((m = re.exec(textFile)) != null) {
+
+          if (m.index === re.lastIndex) {
+
+              re.lastIndex++;
+          }
+
+          if(m.index){
+            thingParams.sliders[i] = { name : m[1], min : m[2], max : m[3]};
+            i++;
+          }
+          
+      }
+
+      //display result
+      console.log(thingParams);
+    }
+    
+
     if(err) { return handleError(res, err); }
     return res.json(200, things);
-  })
+    })
 }
 
 exports.stat = function(req, res){
