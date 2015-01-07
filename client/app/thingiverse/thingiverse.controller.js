@@ -59,6 +59,9 @@ angular.module('openScadAnalyzerApp')
       $scope.getContext = function(context){        
         return JSON.stringify(context, null, 4);
       }
+      $scope.getConfigurateur = function(params) {
+        return JSON.stringify(params, null, 4);
+      }
       $scope.viewInNewTab = function(url){
         $window.open(url);
       }
