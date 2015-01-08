@@ -56,30 +56,9 @@ exports.list = function(req, res){
   thingiverseService.list(req.params.tag, req.params.page, function(err, things){
     logger.info('Fichier thingiverse.controller.js | fonction list');
 
-    if(things.results.length > 1)
-      console.log("Too many things can't show all parameters");
-    else{
-      
-      //contains all parameters in an object
-      var thingParams = {};
-
-      console.log("Generate parameters for " + things.results[0].name + " :");
-
-       //load the thing .scad content
-
-      var textFile = "";
-      
-      for (var i = 0; i < things.results[0].files.length; i++) {
-        //is a .scad file
-        if(things.results[0].files[i].name.indexOf(".scad") != -1){
-            console.log("Scad file found : " + things.results[0].files[i].name);
-            textFile = things.results[0].files[i].content;
-        }
-      };
-
     if(err) { return handleError(res, err); }
     return res.json(200, things);
-    })
+  })
 }
 
 exports.stat = function(req, res){
