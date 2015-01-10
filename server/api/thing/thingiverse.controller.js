@@ -231,7 +231,7 @@ function getParameters(textFile){
           file.thingParams.dropdown[i] = {
             name : m[2].replace(/(\n|\r)/gm,""),
             def : m[3],
-            values : JSON.stringify(m[4].split(",")),
+            values : m[4].split(","),
             description : m[1]
           };
           i++;
@@ -272,7 +272,7 @@ function getParameters(textFile){
         if(m.index){
           file.thingParams.imageToArray[i] = { 
             name : m[2].replace(/(\n|\r)/gm,""), 
-            points : JSON.stringify(m[3].split(",")), 
+            points : m[3].split(","), 
             paths : m[4],
             cols : m[5],
             description : m[1]
