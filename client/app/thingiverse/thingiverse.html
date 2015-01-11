@@ -131,8 +131,63 @@ body {
 				    <tab heading="Context">
 				    	 <pre class="_DarkSlateGray White"><code data-language="json">{{getContext(scad.context)}}</code></pre>
 				    </tab>
-				    <tab heading="Configurateur">
-				    	<pre class="_DarkSlateGray White"><code data-language="json">{{getConfigurateur(scad.thingParams)}}</code></pre>
+				    <tab heading="Configurator">
+
+					  	<form class="configurator form-horizontal" ng-init="parameters = getConfigurator(scad.content)">
+					  		<div ng-repeat="scad in parameters">
+						              
+						      <h3>{{ scad.TabName }}</h3><hr/>
+						      
+						      <div ng-repeat="param in scad.Parameters">
+						        
+						        <!-- AFFECTATIONS -->
+						        <div ng-repeat="affectation in param.affectation">
+						          <h2 class="text-center"></h2>
+						          <div class="form-group">
+						            <span class="text-muted col-sm-offset-0">  // [Affectation] {{ affectation.description }}</span><br/>
+						            <label for="affect_{{ affectation.name }}" class="col-sm-3 control-label">{{ affectation.name }}</label>
+						            <div class="col-sm-2">
+						              <input type="text" class="form-control" id="affect_{{ affectation.name }}" value="{{ affectation.value }}">
+						            </div>
+						          </div>
+						        </div><!-- END AFFECTATIONS-->
+						        
+						        <!-- SLIDERS -->
+						        <div ng-repeat="sliders in param.sliders">
+						          <div class="form-group">
+						            <span class="text-muted col-sm-offset-0"> // [Slider] {{ sliders.description }}</span><br/>
+						            <label for="slider_{{ sliders.name }}" class="col-sm-3 control-label">{{ sliders.name }}</label>
+						            <div class="col-sm-1">
+						            <input class="slider" id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="{{sliders.min}}" data-slider-max="{{sliders.max}}" data-slider-step="1" data-slider-value="{{sliders.def}}"/>
+						              
+						            </div>
+						          </div>
+						        </div><!-- END SLIDERS -->
+						        
+						        <!-- DROPDOWN -->
+						        <div ng-repeat="dropdown in param.dropdown">
+						          <div class="form-group">
+						            <span class="text-muted col-sm-offset-0">  // [dropdown] {{ dropdown.description }}</span><br/>
+						            <label for="slider_{{ sliders.name }}" class="col-sm-3 control-label">{{ dropdown.name }}</label>
+						            
+						            <div class="dropdown col-sm-2">
+						                  <select class="form-control" name="{{dropdown.name}}">
+						                    <option ng-selected="{{dropdown.def == filterCondition.item}}"
+						                            ng-repeat="item in dropdown.values"
+						                            value="{{item}}">
+						                      {{item}}
+						                    </option>
+						                  </select>
+						            </div>
+						            
+						          </div>
+						          
+						        </div><!-- END DROPDOWN -->
+						        
+						      </div>
+
+						    </div>
+					    </form>
 				    </tab>
 			    </tabset>
 			</div><!-- toggle 1 -->
@@ -150,3 +205,5 @@ body {
 </p>
 
 </div>
+
+{{init_sliders()}}
