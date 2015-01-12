@@ -247,11 +247,7 @@ angular.module('openScadAnalyzerApp')
 
       $scope.init_sliders = function(){
 
-        $('.slider').slider({
-          formatter: function(value) {
-            return 'Current value: ' + value;
-          }
-        });
+        $('.lesSliders').slider();
       };
 
       $scope.viewInNewTab = function(url){

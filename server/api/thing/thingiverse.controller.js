@@ -227,6 +227,7 @@ function getParameters(textFile){
         if (m.index === dropdown.lastIndex) {
           dropdown.lastIndex++;
         }
+
         if(m.index){
           file.thingParams.dropdown[i] = {
             name : m[2].replace(/(\n|\r)/gm,""),
