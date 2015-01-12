@@ -22,16 +22,18 @@ rl.setPrompt("> ");
 rl.prompt();*/
 
 rl.write("Please select one\n"+
-				"   1. Download things\n"+
-				"   2. List parsed scad files\n"+
-				"   3. List failed scad files\n"+
-				"   4. List by tag\n"+
-				"   5. Generate global statistics\n"+
-				"   6. Generate specific file statistics\n"+
-				"   7. Parse scad files\n"+
-				"   8. Parse failed files\n"+
-				"   9. Parse one scad file\n"+
-				"  10. Test statistics\n");
+		"   1. Download things\n"+
+		"   2. List parsed scad files\n"+
+		"   3. List failed scad files\n"+
+		"   4. List by tag\n"+
+		"   5. Generate global statistics\n"+
+		"   6. Generate specific file statistics\n"+
+		"   7. Parse scad files\n"+
+		"   8. Parse failed files\n"+
+		"   9. Parse one scad file\n"+
+		"  10. Test statistics\n"+
+		"  11. Test extractor\n");
+
 rl.setPrompt("> ");
 rl.prompt();
 rl.on('line', function(line) {
@@ -163,6 +165,57 @@ rl.on('line', function(line) {
 			
 		});
       	break;
+
+	case 11:
+		var variable;
+		getFile(r2,function(success, data){	
+			
+			//si une erreur s'est produite
+			if(!success){
+				print("Invalid file".red);
+				r2.close();
+			}else{
+
+				//get user file
+				var testFile = JSON.parse(data);
+
+				//get corresponding thing
+				cliSupport.list(testFile.id,1, function(things){
+
+					if(things.totalCount == 0){
+						print("No thing found".red);
+						r2.close();
+					}else{		
+	
+						var file = null;
+
+						//loof for .scad file
+						for (var i = 0; i < things.results[0].files.length; i++) {
+							if(things.results[0].files[i].isParsed === 1){
+								file = things.results[0].files[i].content;
+								break;
+							}
+						};
+
+						if(file != null){
+							//running test
+							cliSupport.testExtractor(file,testFile, function(){
+								r2.close();
+							});
+
+						}else{
+							print("This thing is not parsed".yellow);
+							r2.close();
+						}
+
+					}
+
+				});
+			}
+			
+		});
+      	break;
+
     default:
      	break; 
   }

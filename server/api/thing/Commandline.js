@@ -234,10 +234,10 @@ exports.testStats = function(thing, file ,callback){
 	}else{
 
 		var generatedstats = stats;
-		var userStats = file.stats;
+		var userParameters = file.stats;
 
 		//compare objects
-		var diff = jsdiff.diffJson(generatedstats, userStats);
+		var diff = jsdiff.diffJson(generatedstats, userParameters);
 
 		diff.forEach(function(part){
 		  // green for additions, red for deletions
@@ -262,6 +262,74 @@ exports.testStats = function(thing, file ,callback){
 	callback();
 
 };
+
+exports.testExtractor = function(file, testFile ,callback){
+
+	var valid = true;
+
+	//CONFIGURATOR PARSER//
+          
+    var out = [];
+
+    // Ne récupérer que la partie qui concerne les paramètres (ie : au dessus du premier module)
+
+    var textParams = /^module \w+\(.*?\)/gm
+    var textNoHidden = /^\/\*(?:\s)?(?:\[)?(?:\s)?[hH]idden(?:\s)?(?:\])?(?:\s)?\*\//gm
+
+    var resultsTextParams = file.split(textParams);
+    file = resultsTextParams[0];
+
+    var resultsTextNoHidden = file.split(textNoHidden);
+    file = resultsTextNoHidden[0];
+
+    var diffTab = /^\/\*(?:\s)?(?:\[)(?:\s)?(.*)(?:\s)?(?:\])(?:\s)?\*\//gm; 
+
+    var tabs = file.split(diffTab);
+
+
+    if(tabs.length==1) {
+         out.push({ TabName : "Global", Parameters : getParameters(tabs[0]) });
+    }
+
+    for(var k = 1 ; k< tabs.length; k += 2) {
+        out.push({ TabName : tabs[k], Parameters : getParameters(tabs[k+1]) });
+    } 
+    
+	var Parameters = out;	
+	var userParameters = testFile.Parameters;
+
+	if(Parameters == null ){
+		print("This thing is not parsed yet".yellow)
+	}else{
+
+
+		//compare objects
+		var diff = jsdiff.diffJson(Parameters, userParameters);
+
+		diff.forEach(function(part){
+		  // green for additions, red for deletions
+		  // grey for common parts
+		  var color = part.added ? 'green' :
+		    part.removed ? 'red' : 'grey';
+		  	print(part.value[color]);
+			
+			if(part.added || part.removed){
+				valid = false;
+			}
+		});
+
+		if(!valid){
+			var col = 'red';
+			print('Test failed'.red);
+		}else{
+			print('Test passed'.green);
+		}
+	
+	}
+
+	callback();
+};
+
 
 //////////////////////////////////////////////////////////////////////////////////////
 function closeDB(){
@@ -307,6 +375,150 @@ function getSocket(){
 	}
 }
 
+
+function getParameters(textFile){
+
+	var file = {};
+	file.thingParams = {};
+	file.thingParams.affectation = [];
+	file.thingParams.sliders = [];
+	file.thingParams.dropdown = [];
+	file.thingParams.imageToSurface = [];
+	file.thingParams.imageToArray = [];
+	file.thingParams.polygons = [];
+
+	//regexp
+	var affectation = /^(?:\/\/\s?(.+)\s+)?(?:^([^\/\/]\w*))(?:\s)?\=(?:\s)?(?:"|')?(?:([-+]?[0-9]*\.?[0-9]+|(?:\w|\s)+))(?:"|')?(?:\s)?;(?: )?(?:\/\/(?:\s))?((?!\[).)*$/gm;
+	var sliders = /^(?:\/\/\s?(.+)\s+)?(?:^([^\/\/]\w*))(?:\s)?\=(?:\s)?([-+]?[0-9]*\.?[0-9]+)(?:\s)?;(?:\s)?\/\/(?:\s)?\[([-+]?[0-9]*\.?[0-9]+)\:([-+]?[0-9]*\.?[0-9]+)\]/gm; 
+	var dropdown = /^(?:\/\/\s?(.+)\s+)?(?:^([^\/\/]\w*))(?:\s)?\=\s*(?:"|')?(?:([-+]?[0-9]*\.?[0-9]+|(?:\w|\s)+))(?:"|')?;\s*\/\/\s*\[((?:(?:\d+|\w+)?(?:\:)?(?:(?:\w+|\s)+),)(?:(?:\d+|\w+)?(?:\:)?(?:(?:\w+|\s)+)(?:,)?)+)\]/gm;
+	var imgToSurface = /^(?:\/\/\s?(.+)\s+)?(?:^([^\/\/]\w*))(?:\s)?\=(?:\s)?(?:(?:"|')((?:\w|\-)+\.\w+)(?:"|'))(?:\s)?;(?:\s)?\/\/(?:\s)?\[image_surface(?:\s)?:(?:\s)?(\d+)x(\d+)\]/gm; 
+	var imgToArray = /^(?:\/\/\s?(.+)\s+)?(?:^([^\/\/]\w*))(?:\s)?\=(?:\s)?\[((?:[-+]?[0-9]*\.?[0-9]+|,|\s)+)\](?:\s)?;(?:\s)?\/\/(?:\s)?\[image_array(?:\s)?:(?:\s)?(\d+)x(\d+)\]/gm; 
+	var polygons = /^(?:\/\/\s?(.+)\s+)?(?:^([^\/\/]\w*))(?:\s)?\=(?:\s)?\[(?:\s)?(\[.*](?:\s)?](?:\s)?),\[(?:\s)?(\[.*](?:\s)?)(?:\s)?](?:\s)?];(?:\s)?\/\/(?:\s)?\[draw_polygon:(\d+)x(\d+)\]/gm;
+
+	var m;
+	var i = 0;
+
+
+	//console.log(textFile);
+
+	while ((m = affectation.exec(textFile)) != null) {
+	if (m.index === affectation.lastIndex) {
+
+	  affectation.lastIndex++;
+	}
+
+	if(m.index){
+	  file.thingParams.affectation[i] = {
+	    name : m[2].replace(/(\n|\r)/gm,""), 
+	    value : m[3],
+	    description : m[1]
+	  };
+	  i++;
+	}
+	}
+
+
+	i = 0;
+	while ((m = sliders.exec(textFile)) != null) {
+	if (m.index === sliders.lastIndex) {
+	  sliders.lastIndex++;
+	}
+	if(m.index){
+	  file.thingParams.sliders[i] = { 
+	    name : m[2].replace(/(\n|\r)/gm,""),
+	    min : m[4], 
+	    def : m[3], 
+	    max : m[5],
+	    description : m[1]
+	  };
+	  i++;
+	}
+	}
+
+	i = 0;
+
+	while ((m = dropdown.exec(textFile)) != null) {
+	if (m.index === dropdown.lastIndex) {
+	  dropdown.lastIndex++;
+	}
+	if(m.index){
+	  file.thingParams.dropdown[i] = {
+	    name : m[2].replace(/(\n|\r)/gm,""),
+	    def : m[3],
+	    values : m[4].split(","),
+	    description : m[1]
+	  };
+	  i++;
+	}
+	}
+
+	i = 0;
+
+	while ((m = imgToSurface.exec(textFile)) != null) {
+
+	if (m.index === imgToSurface.lastIndex) {
+
+	  imgToSurface.lastIndex++;
+	}
+
+	if(m.index){
+	  file.thingParams.imageToSurface[i] = { 
+	    name : m[2].replace(/(\n|\r)/gm,""), 
+	    file : m[3], 
+	    width : m[4],
+	    height : m[5],
+	    description : m[1]
+	  };
+	  i++;
+	}
+
+	}
+
+	i = 0;
+
+	while ((m = imgToArray.exec(textFile)) != null) {
+
+	if (m.index === imgToArray.lastIndex) {
+
+	  imgToArray.lastIndex++;
+	}
+
+	if(m.index){
+	  file.thingParams.imageToArray[i] = { 
+	    name : m[2].replace(/(\n|\r)/gm,""), 
+	    points : m[3].split(","), 
+	    paths : m[4],
+	    cols : m[5],
+	    description : m[1]
+	  };
+	  i++;
+	}
+	}
+
+	i = 0;
+
+	while ((m = polygons.exec(textFile)) != null) {
+
+	if (m.index === polygons.lastIndex) {
+
+	  polygons.lastIndex++;
+	}
+
+	if(m.index){
+	  file.thingParams.imageToArray[i] = { 
+	    name : m[2].replace(/(\n|\r)/gm,""), 
+	    array : m[3], 
+	    rows : m[4],
+	    width : m[5],
+	    height : m[6],
+	    description : m[1]
+	  };
+	  i++;
+	}
+	}
+
+	return file;
+	}
 
 
 
