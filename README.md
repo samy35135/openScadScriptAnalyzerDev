@@ -82,7 +82,7 @@ This project is separated in 2 sides :
          ├─ main           : main page (statistics)
          ├─ thingiverse    : main fonctions (batch jobs)
        ├─ components
-         ├─ navbar         : menu
+         ├─ navbar         : menu
          ├─ socket         : socket.io client side conf
      ├─ server             : server side - Node.JS
        ├─ api
@@ -118,7 +118,7 @@ Here is the client architecture :
         ├─ batch.html           	: Download things page template
         ├─ parse.html           	: Parse things page template
         ├─ thingiverse.html     	: Thing list page template
-        ├─ tingiverse.js        	: Routing conf of thingiverse module
+        ├─ tingiverse.js        	: Routing conf of thingiverse module
         ├─ thingiverse.batch.controller.js   		: Controller of batch.html
         ├─ thingiverse.controller.js         		: Controller of main.html
         ├─ thingiverse.forceParsing.controller.js 	: Controller of parse.html
@@ -162,7 +162,6 @@ Here is the server architecture :
         
 # To do
 
-* Write a test case for the statistic module
 * Try to figure out while some files fail to parse
 * Implement a parameter extractor for each thing (~~web~~ and console interface)
 * Implement a configurator (~~web~~ and console interface)
