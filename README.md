@@ -162,18 +162,10 @@ Here is the server architecture :
         
 # To do
 
-* Implement a command line interface that is able to  :
-  * Download things from the Thingiverse API
-  * List :
-    * Successfully parsed scads 
-    * Fail scads + stacktrace
-  * Generate a CSV containing :
-    * A .scad file statistic's
-    * All scads statistic's
 * Write a test case for the statistic module
 * Try to figure out while some files fail to parse
-* Implement a parameter extractor for each thing (web and console interface)
-* Implement a configurator (web and console interface)
+* Implement a parameter extractor for each thing (~~web~~ and console interface)
+* Implement a configurator (~~web~~ and console interface)
  
 ## Bugs & known issues
 
