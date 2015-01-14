@@ -131,8 +131,9 @@ body {
 				    <tab heading="Context">
 				    	 <pre class="_DarkSlateGray White"><code data-language="json">{{getContext(scad.context)}}</code></pre>
 				    </tab>
+				    <!-- tab configurator -->
 				    <tab heading="Configurator">
-
+				    	<!-- get parameters from the scad content -->
 					  	<form class="configurator form-horizontal" ng-init="parameters = getConfigurator(scad.content)">
 					  		<div ng-repeat="scad in parameters">
 						              

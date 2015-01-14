@@ -397,7 +397,7 @@ exports.distinctIncludedFiles = function(regExp, callback){
 	});// find
 }
 
-
+/* Function export statistics at csv format */
 exports.generateGlobalStatistics = function(idThing, idFile, callback) {
 	logger.info('Fichier thingiverse.service.js | fonction generateGlobalStatistics');
 	var pops = '_thing';
@@ -427,19 +427,7 @@ exports.generateGlobalStatistics = function(idThing, idFile, callback) {
 		var arrayForCsv = [];
 		_.each(results, function (r) {
 			if (typeof(r) != 'number') {
-				//ret = array2json(r);
-				//var tpm = toObject(r);
-				
-				//print('---------------------------------------');
-				//print(r.length);
 				for(var i=0; i < r.length; i++ ){
-					/*lineForCsv['_id'] = r[i]._id;
-					lineForCsv['globalArgCnt']  = r[i].stat['globalArgCnt'];
-					lineForCsv['mostComplexFuncArgCnt'] = r[i].stat['mostComplexFuncArgCnt'];
-					lineForCsv['totalFuncCnt'] = r[i].stat['totalFuncCnt'];
-					lineForCsv['mostComplexModuleArgCnt'] = r[i].stat['mostComplexModuleArgCnt'];
-					lineForCsv['totalModuleCnt'] = r[i].stat['totalModuleCnt'];*/
-					//print(r[i].stat.length);
 					for(var j=0; j <r[i].stat.length; j++ ){
 						//print(r[i].stat[j]);
 						var lineForCsv = {};
@@ -458,17 +446,11 @@ exports.generateGlobalStatistics = function(idThing, idFile, callback) {
 					}
 					
 				}
-				//print(r[0]._id);
-				//print('---------------------------------------');
-				//ret = tpm[count]['stat'];
 			}
 		});
-	//print(arrayForCsv);
-		//print(arrayForCsv);
 		convertJson2Csv(arrayForCsv, nameFile, function() {
 			callback();
 		});
-		//callback();
 	});
 }
 //////////////////////////////////////////////////////////////////////////////////

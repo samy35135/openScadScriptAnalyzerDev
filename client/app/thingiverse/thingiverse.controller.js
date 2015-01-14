@@ -63,6 +63,7 @@ angular.module('openScadAnalyzerApp')
         return JSON.stringify(context, null, 4);
       }
 
+      /* fonction to call parameters with each tab name */
       $scope.getConfigurator = function(file){
 
         if(file == null)
@@ -72,37 +73,41 @@ angular.module('openScadAnalyzerApp')
               
         var out = [];
 
-        // Ne récupérer que la partie qui concerne les paramètres (ie : au dessus du premier module)
-
+        // get only parameters
+        // stop before the first module and remove hidden tab
         var textParams = /^module \w+\(.*?\)/gm
         var textNoHidden = /^\/\*(?:\s)?(?:\[)?(?:\s)?[hH]idden(?:\s)?(?:\])?(?:\s)?\*\//gm
 
+        // split before the first module
         var resultsTextParams = file.split(textParams);
         file = resultsTextParams[0];
 
+        // split before the hidden text
         var resultsTextNoHidden = file.split(textNoHidden);
         file = resultsTextNoHidden[0];
 
+        // split differents tabs, global, cube, ...
         var diffTab = /^\/\*(?:\s)?(?:\[)(?:\s)?(.*)(?:\s)?(?:\])(?:\s)?\*\//gm; 
-
         var tabs = file.split(diffTab);
 
-
+        // if there is no tab, use the global tab parameters
         if(tabs.length==1) {
              out.push({ TabName : "Global", Parameters : $scope.getParameters(tabs[0]) });
         }
-
+        // else, get parameters for each tabs
         for(var k = 1 ; k< tabs.length; k += 2) {
             out.push({ TabName : tabs[k], Parameters : $scope.getParameters(tabs[k+1]) });
         }
 
         //END CONFIGURATOR PARSER// 
-        //
+        // return the parameters array
         return out;
       }
 
+      /* function to get parameters for a tab */
       $scope.getParameters = function(textFile){
 
+              // defines arrays and json objects
               var file = {};
               file.thingParams = {};
               file.thingParams.affectation = [];
@@ -112,7 +117,8 @@ angular.module('openScadAnalyzerApp')
               file.thingParams.imageToArray = [];
               file.thingParams.polygons = [];
 
-              //regexp
+              // regexp to get differents customizables parameters
+              // see makerbot customizer docs
               var affectation = /^(?:\/\/\s?(.+)\s+)?(?:^([^\/\/]\w*))(?:\s)?\=(?:\s)?(?:"|')?(?:([-+]?[0-9]*\.?[0-9]+|(?:\w|\s)+))(?:"|')?(?:\s)?;(?: )?(?:\/\/(?:\s))?((?!\[).)*$/gm;
               var sliders = /^(?:\/\/\s?(.+)\s+)?(?:^([^\/\/]\w*))(?:\s)?\=(?:\s)?([-+]?[0-9]*\.?[0-9]+)(?:\s)?;(?:\s)?\/\/(?:\s)?\[([-+]?[0-9]*\.?[0-9]+)\:([-+]?[0-9]*\.?[0-9]+)\]/gm; 
               var dropdown = /^(?:\/\/\s?(.+)\s+)?(?:^([^\/\/]\w*))(?:\s)?\=\s*(?:"|')?(?:([-+]?[0-9]*\.?[0-9]+|(?:\w|\s)+))(?:"|')?;\s*\/\/\s*\[((?:(?:\d+|\w+)?(?:\:)?(?:(?:\w+|\s)+),)(?:(?:\d+|\w+)?(?:\:)?(?:(?:\w+|\s)+)(?:,)?)+)\]/gm;
@@ -123,9 +129,7 @@ angular.module('openScadAnalyzerApp')
               var m;
               var i = 0;
 
-              
-              //console.log(textFile);
-
+              // block code to get affectations variable
               while ((m = affectation.exec(textFile)) != null) {
                 if (m.index === affectation.lastIndex) {
 
@@ -144,6 +148,7 @@ angular.module('openScadAnalyzerApp')
 
               
               i = 0;
+              // block code to get sliders variable
               while ((m = sliders.exec(textFile)) != null) {
                 if (m.index === sliders.lastIndex) {
                   sliders.lastIndex++;
@@ -161,7 +166,7 @@ angular.module('openScadAnalyzerApp')
               }
 
               i = 0;
-
+              // block code to get dropdowns variable
               while ((m = dropdown.exec(textFile)) != null) {
                 if (m.index === dropdown.lastIndex) {
                   dropdown.lastIndex++;
@@ -179,6 +184,7 @@ angular.module('openScadAnalyzerApp')
 
               i = 0;
 
+              // block code to get image to surface variable
               while ((m = imgToSurface.exec(textFile)) != null) {
 
                 if (m.index === imgToSurface.lastIndex) {
@@ -200,7 +206,7 @@ angular.module('openScadAnalyzerApp')
               }
 
               i = 0;
-
+              // block code to get image to array variable
               while ((m = imgToArray.exec(textFile)) != null) {
 
                 if (m.index === imgToArray.lastIndex) {
@@ -221,7 +227,7 @@ angular.module('openScadAnalyzerApp')
               }
 
               i = 0;
-
+              // block code to get polygons variable
               while ((m = polygons.exec(textFile)) != null) {
 
                 if (m.index === polygons.lastIndex) {
@@ -245,8 +251,8 @@ angular.module('openScadAnalyzerApp')
               return file;
         }
 
+      // function to initialize sliders
       $scope.init_sliders = function(){
-
         $('.lesSliders').slider();
       };
 
